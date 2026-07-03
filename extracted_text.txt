@@ -1,0 +1,282 @@
+FACULTAD DE INGENIERÌA Y ARQUITECTURA
+ESCUELA PROFESIONAL DE INGENIERÌA CIVIL
+Gestión de seguridad y salud ocupacional y nivel de riesgo laboral en obras viales: revisión sistemática
+Autores:
+Aliaga Tocasca, Ruben Salvador (https://orcid.org/0009-0002-3047-4330)  rualiagato@ucvvirtual.edu.pe , Ingeniería Civil, VII
+Espinoza Vega, Fernando Augusto (https://orcid.org/0009-0008-0038-0361) fespinozave17@ucvvirtual.edu.pe, Ingeniería Civil, VII
+Layza Yauri, Maria Virginia (https://orcid.org/0009-0009-9989-836X) malayzaya@ucvvirtual.edu.pe, Ingeniería Civil, VII. 
+Lopez Flores, Cristian (https://orcid.org/0009-0003-5065-2701) clopezfl01@ucvvirtual.edu.pe, Ingenieria Civil, Vll
+Maravi Toribio, Janeth Silvia (http://orcid.org/0009-0001-7776-301X) jmaravit@ucvvirtual.edu.pe, Ingeniería Civil, VII 
+Mauli Roca, Ninkor (https://orcid.org/0009-0000-4064-612X) mmauliro21@ucvvirtual.edu.pe, Ingeniería Civil, VII
+Rios Tello, Brayan Migdonio (http://orcid.org/0009-0002-5602-2455)
+brrioste@ucvvirtual.edu.pe, Ingeniería Civil, VII
+Sosa Santana, Gabriel Anthony (https://orcid.org/0009-0005-9958-2999) gasantanaso@ucvvirtual.edu.pe, Ingeniería Civil, VII
+Asesor:
+Mg. Guillen Cabrera, Jaime Jesus (https://orcid.org/0000-0001-5256-0876 )
+Lima Este - 2026
+Generalidades
+Nivel del trabajo de investigación formativa:
+NIVEL III
+Objetivo de Desarrollo Sostenible y Meta:
+ODS 11: CIUDADES Y COMUNIDADES SOSTENIBLES, Meta: Lograr que las ciudades tengan acceso a servicios básicos y sostenibles.
+Línea de investigación específica del programa de estudios:
+Diseño de infraestructura vial
+Línea de responsabilidad social universitaria:
+Desarrollo Sostenible y Adaptación al Cambio Climático
+RESUMEN
+Referente a la realidad problemática, consideramos que existe un riesgo constante de que los trabajadores sufran lesiones. De igual forma, este problema tiene relación con el ODS 11: Ciudades y comunidades sostenibles. El objetivo general es: Determinar el impacto de la gestión de seguridad y salud ocupacional en el nivel de riesgo en las obras de pistas y veredas, Ate, 2026. La investigación fue aplicada, cuantitativa, de diseño no experimental, descriptivo-correlacional y transversal. Se usó un muestreo por conveniencia con obreros de pavimentación. Los datos se recolectaron mediante cuestionarios Likert y listas de verificación (IPERC) validados por expertos, y se procesaron en SPSS utilizando la prueba Rho de Spearman, respetando el anonimato y el consentimiento informado. Los resultados evidenciaron una correlación directa y significativa entre la gestión de seguridad y el nivel de riesgo, demostrando que una mayor supervisión y capacitación reducen los accidentes. Los peligros más reportados fueron los ergonómicos y físicos, sumados al estrés de los operarios. Concluimos que el liderazgo de los capataces y el cuidado de la salud mental son claves para evitar actos inseguros, pero se requiere superar las trabas de presupuesto e inspección para lograr obras viales seguras.
+Palabras clave: Seguridad, prevenciòn, accidentes, construcciòn
+ABSTRACT
+Regarding the problem at hand, we consider there to be a constant risk of worker injury. Furthermore, this issue relates to SDG 11: Sustainable Cities and Communities. The general objective is to determine the impact of occupational health and safety management on risk levels in road and sidewalk construction projects in Ate (2026). This was an applied, quantitative study using a non-experimental, descriptive-correlational, and cross-sectional design. Convenience sampling was employed, involving paving workers. Data were collected via Likert-scale questionnaires and hazard identification and risk assessment (HIRA) checklists validated by experts; the data were processed in SPSS using Spearman’s Rho test, while ensuring anonymity and informed consent. The results revealed a direct, significant relationship between safety management and risk levels, demonstrating that increased supervision and training reduce accidents. The most frequently reported hazards were ergonomic and physical, alongside worker stress. We conclude that foreman leadership and mental health care are key to preventing unsafe acts, though budgetary and inspection-related obstacles must be overcome to achieve safe road construction projects.
+Keywords: Safety, prevention, accidents, construction
+ÌNDICE
+Tabla de contenido
+RESUMEN2
+ABSTRACT3
+I. INTRODUCCIÒN1
+II.MÈTODO6
+III. RESULTADOS8
+CONCLUSIONES16
+RECOMENDACIONES17
+I. INTRODUCCIÒN
+Referente a la realidad problemática, para poder definirla de manera correcta debemos abordar primero cómo está la situación mundial en el rubro de la construcción y las obras públicas. El desarrollo de grandes infraestructuras de transporte, como pistas y veredas, es un sector muy pero muy fundamental para el progreso, pero que trae consigo muchos accidentes de trabajo frecuentes. Básicamente, a nivel internacional vemos que la continua expansión y lo complejo que es construir este tipo de obras hace que el riesgo de seguridad sea altísimo. Por ejemplo, siempre se reportan fallas a nivel de supervisión y una capacitación inadecuada que debilita todo el sistema, lo que hace necesario buscar estrategias de bloqueo y defensa proactivas para no lamentar accidentes (Liu et al., 2026). No obstante, las cifras actuales reflejan una realidad diferente a lo que dictan las normas, y a esto se le sumó hace pocos años el tremendo golpe del SARS-CoV-2. Ante esa amenaza, se tomaron medidas en los lugares de trabajo como el "pase sanitario" o el distanciamiento, pero estas medidas a veces fueron social y económicamente poco sostenibles, intensificando el riesgo laboral al segregar trabajadores o dejarlos sin empleo, lo que complicó mucho la gestión de riesgos en la seguridad y salud ocupacional (Tatli & Marhavilas, 2024). De igual forma, las organizaciones tuvieron que adaptarse rápido a usar tecnologías remotas y distanciamiento para no parar la producción frente a los peligros patogénicos (Nnaji et al., 2022). Esto generó mucho miedo a perder el trabajo, lo cual impactó directamente en el comportamiento preventivo de los obreros durante esos tiempos de crisis (Khaday et al., 2023).
+En el contexto de los países en desarrollo como el Perú, la situación es bastante similar o incluso un poco más grave. Un punto importante es que en las economías en desarrollo existen muchas interrelaciones de barreras de seguridad y salud ocupacional que frenan las buenas prácticas en la construcción (Irfan et al., 2026). A esto se le suma que las capacidades regulatorias o las leyes a veces no están bien diseñadas para la realidad del campo (Hussain et al., 2026). Por ejemplo, es muy común ver que en obras viales y puentes ocurren accidentes graves por fallos humanos o de los equipos pesados, provocando pérdidas de materiales y vidas humanas simplemente por no tener un buen modelo de evaluación de riesgos que enlace las fases de la obra con los peligros (Hartono et al., 2025). Además, hay muchas variables socioeconómicas y culturales que apoyan o dificultan que los obreros adopten prácticas de seguridad reales en la construcción (Alqahtani et al., 2024).
+Ahora bien, a nivel local y regional enfrentamos el limitado cumplimiento de las normas en obras de pavimentación. En particular, se estima que hay una gran discrepancia entre lo que dicen las políticas de seguridad en el papel y lo que realmente hacen los obreros de primera línea, muchas veces por culpa de presiones psicosociales externas o simplemente por apuro (Afuye et al., 2024). Por eso mismo consideramos que existe un riesgo constante de que los trabajadores sufran lesiones en entornos de sol intenso, ruido de maquinarias y estrés vehicular. A pesar de los esfuerzos, mucha gente percibe que la salud y seguridad en estas obras es deficiente si no se aplican bien las medidas de protección (Castro Mejía et al., 2023). Por lo tanto, la realidad problemática se resume en que la deficiente gestión de seguridad sigue impactando de forma negativa en los obreros. Ante la gran cantidad de estudios sueltos, se necesita urgentemente sistematizar la evidencia reciente para saber exactamente qué funciona y qué no.
+Pasando al planteamiento del problema, la pregunta principal que nos hacemos es: ¿De qué manera está impactando la gestión de seguridad y salud ocupacional sobre el nivel de riesgo en los proyectos de vías e infraestructura según lo que dice la literatura de estos últimos años? A partir de ahí, sacamos tres problemas específicos. PE1: ¿Qué riesgos físicos y psicosociales son los que más se reportan al ejecutar estas obras viales? PE2: ¿Cómo es que el liderazgo del jefe y el estrés del obrero terminan influyendo en su comportamiento preventivo, según los estudios que hemos analizado? Y finalmente, PE3: ¿Cuáles son las medidas o barreras que hacen que las prácticas de seguridad funcionen o fallen en los países en desarrollo?
+Sobre la justificación, podemos verla desde tres lados distintos. Empezando por la justificación social, sabemos que las familias de los obreros de construcción dependen al cien por ciento de que ellos estén bien físicamente. Si logramos sistematizar bien toda la información que hay dispersa, esto va a ayudar a armar mejores diseños de gestión que garanticen que la gente regrese sana a su casa. Por el lado de la justificación práctica y técnica, este trabajo junta cosas importantes al integrar descubrimientos de varios países, y al conocer mejor esta evidencia, las empresas podrán reducir directamente sus fallas en campo y no perder tiempo de ejecución. Finalmente, por la justificación metodológica y normativa, creemos que los resultados de esta revisión van a quedar como un documento base para las próximas obras públicas. Esto nos dejará ver el panorama real de si se están cumpliendo las normas parecidas a nuestra Ley 29783, dejando una línea clara para poder controlar mejor los peligros.
+Sobre la base de todo esto, nuestro objetivo general para esta investigación será revisar de forma sistemática cómo es que la gestión de seguridad y salud ocupacional impacta en los niveles de riesgo dentro de los proyectos de infraestructura vial. Para lograrlo, nos hemos propuesto tres objetivos específicos bien marcados. El primero busca identificar cuáles son esos riesgos físicos, ergonómicos y psicosociales que más reportan los trabajadores en las obras viales. El segundo trata de entender, apoyándonos en la evidencia actual, qué tanta influencia tiene el tipo de liderazgo y la salud mental para que los obreros realmente apliquen la prevención. Y por último, el tercer objetivo es detallar qué barreras existen en los países en desarrollo que no dejan que la gestión de seguridad sea realmente eficaz.
+Referente a los antecedentes internacionales, podemos encontrar varios estudios súper interesantes sobre grandes infraestructuras. En China, desarrollaron investigaciones sobre cómo los riesgos se penetran jerárquicamente en proyectos viales de transporte, usando minería de texto y redes complejas. Lograron ver que la falta de capacitación tiene un impacto fuerte y que se necesita una estrategia de defensa proactiva en lugar de solo arreglar cosas operativas (Liu et al., 2026). Otro estudio en Malasia exploró las capacidades regulatorias para el diseño seguro, mostrando que muchas veces la ley no alcanza si no hay un buen diseño preventivo (Hussain et al., 2026). En Nueva Zelanda, se examinaron los factores de riesgo en trabajadores migrantes chinos, demostrando que estar lejos de casa o en una cultura diferente influye muchísimo en los resultados de seguridad (Guan et al., 2026). Finalmente, a nivel internacional también resalta el uso de la tecnología dura, como el modelo de cámaras YOLOv8s probado por Qi et al. (2026) que detecta y rastrea a obreros ocluidos para evitar caídas operando a más de 142 cuadros por segundo, lo que demuestra que la prevención visual automatizada ya es una realidad.
+A cerca de los antecedentes nacionales y de economías en desarrollo, en Perú, Castro Mejía et al. (2023) propusieron medidas de salud y seguridad para reducir riesgos en la construcción de edificaciones, encontrando mediante encuestas que casi un 35% percibía los riesgos como altos y un 31% como moderados, subrayando la urgencia de cumplir con la protección en obras similares a las viales. De igual forma, en Indonesia, Hartono et al. (2025) crearon un modelo de evaluación de riesgos integrando la estructura de desglose del trabajo (EDT), lo cual es muy útil para ver peligros exactos en cada fase de la obra, como en el caso de puentes y pistas. Otro estudio clave en países en vías de desarrollo es el de Irfan et al. (2026), quienes usaron el enfoque PLS-SEM para modelar cómo se interrelacionan las enormes barreras que no dejan avanzar a la seguridad ocupacional en nuestra región. También, Alqahtani et al. (2024) exploraron cómo las variables socioeconómicas apoyan o dificultan que los obreros adopten prácticas de seguridad reales en distintas culturas.
+En cuanto a teorías relacionadas, el diseño de un buen sistema de seguridad para proteger a las personas en obras civiles se basa en ideas fijas sobre el comportamiento humano, la mente y la ergonomía física. Primero, la teoría del liderazgo transformacional explica cómo un jefe modula el comportamiento seguro de los obreros. Sankar y Anandh (2024) identificaron de forma cualitativa que un líder que inspira logra más seguridad que uno transaccional que solo se enfoca en el castigo y la recompensa, algo que también apoyan Sari et al. (2023) al demostrar que las prácticas de liderazgo influyen directamente en los riesgos. A esto se le suma la cultura y clima organizacional, que según Bendi y Kulkarni (2024) y Oropesa (2025), es básico para que los trabajadores rindan bien sin accidentarse. Esto se une al sistema organizacional de contingencias, donde Samuelsson et al. (2026) nos dicen que "predicar con el ejemplo" desde la gerencia es vital para que la cultura de seguridad funcione bien, lo que también es reforzado por Chen et al. (2025) al señalar el papel clave de la supervisión y las obligaciones en las obras.
+Por otro lado, la teoría del agotamiento y estrés laboral nos muestra que el cuerpo y la mente del obrero se desgastan juntos bajo presión. Zhang et al. (2023) probaron que la presión de acabar la obra rápido y la supervisión abusiva de algunos capataces traen un fuerte agotamiento emocional, lo cual genera descuidos y fatiga mental, un punto en el que coinciden Wang et al. (2023) y Asadullah et al. (2025). Para medir este desgaste puramente físico, la teoría de la variabilidad de la frecuencia cardíaca es súper útil, tal como lo hicieron Arias et al. (2023) y Fang et al. (2023) al usar mediciones fisiológicas para rastrear la fatiga de los obreros. A esto se le añaden los riesgos ergonómicos (Seo & Lee, 2026) y el estrés general o físico en las obras (Utami & Setyawan, 2025; Azzamullah et al., 2025) que disparan los accidentes. Finalmente, para lidiar con toda esta carga pesada, la teoría de la resiliencia psicológica sugiere que mejorar el autocontrol y la salud mental de los trabajadores reduce drásticamente la depresión y ansiedad en la construcción (Zhang et al., 2026). Si a esto le sumamos los modelos de evaluación (Al-Otaibi et al., 2025) y vencemos las barreras ergonómicas o psicosociales (Riana et al., 2024), se puede garantizar el cumplimiento de la buena gestión preventiva (Sorooshian et al., 2023). Aplicar todas estas teorías evita esa peligrosa discrepancia sistemática que menciona Afuye et al. (2024) entre lo que dice la política de seguridad oficial y lo que el obrero estresado realmente hace en la calle.
+II.MÈTODO
+Sobre el tipo, enfoque y diseño de investigación: el trabajo que estamos haciendo es de tipo básica, principalmente porque lo que queremos es armar una buena base de conocimiento revisando la literatura que ya existe. Estamos usando un enfoque cualitativo y documental, ya que nuestra idea central es revisar, juntar y comparar lo que otros autores han encontrado antes. En cuanto al diseño, nos fuimos por uno descriptivo y documental armando una Revisión Sistemática de la Literatura o RSL, siguiendo los pasos de la famosa declaración PRISMA. Elegimos este camino no experimental porque nos deja recolectar la mejor evidencia científica de los últimos cinco años y contestar nuestras preguntas sin tener que ir a medir cosas directamente a la calle.
+Viendo el tema de las categorías: hemos definido dos bloques grandes para el análisis. La primera categoría fuerte es el "Nivel de Riesgo Laboral", y dentro de esta metimos subcategorías que ven los factores físicos, por ejemplo, todo el desgaste del cuerpo o el estrés por calor, junto con los factores psicosociales, como la presión externa y la fatiga de mente que sufren los obreros. Por otro lado, nuestra segunda categoría es la "Gestión de Seguridad y Salud Ocupacional", la cual revisamos usando tres puntos clave: cómo funciona el liderazgo del jefe, las trabas o capacidades que tienen las leyes, y si de verdad se cumplen las prevenciones en la obra. Separarlo así nos ayuda muchísimo a ordenar toda la información que sacamos de los artículos.
+Sobre la unidad de análisis: nos quedamos con un grupo de 17 artículos científicos de alto peso, casi todos sacados de revistas Scopus y Web of Science en cuartiles Q1 y Q2. Como nuestro trabajo es puro documento, armamos la muestra usando un muestreo intencional donde fuimos bien estrictos con lo que entraba. Básicamente pedimos tres cosas: primero, que los estudios sean del 2022 para adelante; segundo, que hablen del sector construcción pero tirando para vías y pavimentos; y tercero, que toquen el tema del liderazgo, el estrés o el uso de tecnología para evitar accidentes. Dejamos fuera las tesis, los artículos de opinión y cualquier trabajo que no tuviera que ver con obras públicas.
+En lo que respecta a las técnicas e instrumentos de recolección de datos, se usaron métodos de análisis documental. La técnica principal fue el fichaje y la revisión sistemática de bases de datos académicas. Como instrumento se utilizó una matriz de síntesis y extracción de datos elaborada en Excel. Esta matriz permitió registrar y estandarizar la información clave de cada uno de los 17 artículos seleccionados, incluyendo el autor, año, país, objetivo, metodología usada y resultados principales vinculados a las categorías de estudio.
+Acerca de los métodos de análisis de datos, se hizo mediante la técnica de análisis de contenido temático. La información obtenida de la matriz de extracción se agrupó y comparó sistemáticamente para identificar las tendencias teóricas, los patrones emergentes, las similitudes y las diferencias metodológicas entre los distintos estudios elegidos. Esto facilitó organizar el capítulo de resultados en tres ejes temáticos correspondientes a los objetivos específicos planteados.
+En relación con los aspectos éticos: Este estudio se realizó respetando los principios de integridad científica y propiedad intelectual de la Universidad César Vallejo. Dado que es una revisión sistemática, no requirió aplicación de consentimientos informados a personas físicas, pero se aplicó rigurosamente la correcta citación en formato APA 7ma edición para reconocer la autoría de todos los investigadores de los artículos seleccionados, evitando estrictamente cualquier forma de plagio y asegurando que las interpretaciones no tergiversen los resultados originales.
+III. RESULTADOS
+En cuanto al objetivo general: Revisar de forma sistemática cómo es que la gestión de seguridad y salud ocupacional impacta en los niveles de riesgo dentro de los proyectos de infraestructura vial.
+ Tabla 1: Factores de riesgo sistémico en proyectos de infraestructura vial 
+Riesgo identificado
+Nivel de impacto
+Consecuencia en obra vial
+Falta de capacitación
+Alto
+Incremento de accidentes
+Supervisión deficiente
+Alto
+Riesgos operativos graves
+Mala comunicación
+Medio
+Errores de coordinación
+Presión de tiempo
+Alto
+Conductas inseguras
+Fuente: Adaptado de Liu, W. et. al (2026), Unraveling hierarchical penetration mechanisms and coupling relationships of safety risks in major transportation infrastructure construction using text mining and complex networks.
+Tabla 2: Percepción del nivel de riesgo ocupacional en trabajadores de construcción 
+Nivel de percepción del riesgo
+Porcentaje de trabajadores
+Alto
+35%
+Moderado
+31%
+Bajo
+20%
+Muy bajo
+14%
+Fuente: Adaptado de Castro, et. al (2023), Propuesta de salud y seguridad para reducir riesgos en la construcción de una escuela
+Tabla 3:Relación entre estilos de liderazgo y seguridad laboral 
+Tipo de liderazgo
+Resultado en seguridad
+Transformacional
+Mayor prevención
+Transaccional
+Cumplimiento parcial
+Pasivo
+Mayor accidentabilidad
+Fuente: Adaptado de Sankar y Anandh (2024).Navigating leadership styles through qualitative exploration for enhanced safety in the construction sector
+Tabla 4. Principales barreras organizacionales en seguridad y salud ocupacional 
+Barrera organizacional
+Nivel de impacto
+Falta de presupuesto
+Alto
+Leyes deficientes
+Alto
+Cultura preventiva débil
+Alto
+Escasa capacitación
+Medio
+Fuente: Adaptado de Irfan et al. (2026). Modelado de las interrelaciones de las barreras de seguridad y salud ocupacional en el sector de la construcción de las economías en desarrollo: un enfoque PLS-SEM
+Las tablas que se evidencian del sistema de gestión de seguridad y salud ocupacional fueron analizadas para corroborar que tengan una relación directa en la reducción de riesgos en obras. Como se vio Liu et al. (2026) demostró que la incapacidad en capacitación y falta de supervisión general un incremento significativo en los accidentes e incidentes en obra, por otro lado Mejía et al. (2023) evidencio que en gran parte los trabajadores percibieron un alto riesgo en las deficiencias preventivas más centrado en las condiciones subestándares. Así mismo, Sankar y Anandh (2024) destacaron que hay maneras de mejorar la seguridad y la prevención a través de un buen liderazgo transformacional. Finalmente, Irfan et al. (2026) habla de las limitaciones regulatorias y económicas que representan barreras importantes en un sistema de gestión y prevención de manera eficaz.
+Respecto al objetivo específico N° 1: Identificar cuáles son los riesgos físicos, ergonómicos y psicosociales que más reportan los trabajadores en las obras viales. 
+ergonómicos y psicosociales que más reportan los trabajadores en las obras viales. 
+ Tabla 5: Niveles de fatiga fisiológica y riesgo laboral 
+Nivel de fatiga fisiológica
+Riesgo detectado
+Bajo
+Riesgo mínimo
+Moderado
+Posible error humano
+Alto
+Alta probabilidad de accidente
+ Fuente: Adaptado de Arias et al. (2023). Identification and classification of physical fatigue in construction workers using linear and nonlinear heart rate variability measurements.
+Tabla 6: Relación entre tipos de fatiga y conductas inseguras 
+Tipo de fatiga
+Conducta insegura asociada
+Física
+Errores operativos
+Mental
+Distracción constante
+Mixta
+Accidentes graves
+Fuente: Adaptado de Fang et al. (2023). Impact of physical and mental fatigue on construction workers' unsafe behavior based on physiological measurement. 
+ Tabla 7: Riesgos ergonómicos y lesiones frecuentes en trabajadores de construcción
+Riesgo ergonómico
+Lesión frecuente
+Posturas forzadas
+Dolor lumbar
+Manipulación manual
+Lesión muscular
+Movimientos repetitivos
+Fatiga muscular
+ Fuente: Adaptado de Seo y Lee (2026). Riesgo ergonómico y trastornos musculoesqueléticos en la construcción: Evaluación de los determinantes ocupacionales en la fuerza laboral de los Estados Unidos.
+Tabla 8: Riesgos físicos identificados en trabajadores de construcción 
+Riesgo físico identificado
+Nivel reportado
+Caídas
+Alto
+Golpes
+Medio
+Exposición al ruido
+Alto
+Fatiga laboral
+Alto
+ Fuente: Adaptado de Castro Mejía et al. (2023). Propuesta de salud y seguridad para reducir riesgos en la construcción de una escuela.
+Las tablas analizadas muestran relación con los factores de riesgos psicosociales, físicos y ergonómicos demuestran que las fatigas laborales generadas por el estrés es uno de los factores más asociados de construcción. Tanto Fang et al. (2023) y Arias et al. (2023) coinciden en sus análisis que tanto como el agotamiento físico como el mental aumentan las conductas inseguras causando errores operativos mendicantes de los actos subestándares. En ese sentido, Seo y Lee (2026) afirman que los trabajos que requieran posturas forzadas y movimientos repetitivos incómodos generan problemas musculoesqueléticas que son comúnmente conocidas como enfermedades ocupacionales. Así mismo, Castro et al. (2023) señala riesgos de obra como caídas, golpes y exposición al ruido sin el adecuado EPP son los más reportados en obra. Esto demuestra que los riesgos para la salud y la seguridad siguen siendo la principal consideración en la construcción de infraestructuras de transporte público.
+En cuanto al objetivo específico N° 2: Entender qué tanta influencia tiene el tipo de liderazgo y la salud mental para que los obreros realmente apliquen la prevención. 
+Tabla 9. Principales estresores laborales y efectos psicológicos 
+Estresor laboral
+Impacto psicológico
+Presión de tiempo
+Estrés elevado
+Supervisión abusiva
+Ansiedad
+Jornadas extensas
+Fatiga mental
+ Fuente: Adaptado de Zhang et al. (2023). Building psychological resilience to improve the mental health of construction professionals
+Tabla 10: Factores emocionales y consecuencias en seguridad laboral 
+Factor emocional
+Consecuencia laboral
+Ansiedad
+Distracción
+Miedo
+Conducta insegura
+Estrés
+Baja concentración
+ Fuente: Adaptado de Wang et al. (2023). Stress, fear, and anxiety among construction workers: A systematic review.
+ Tabla 11: Influencia de los estilos de liderazgo sobre el cumplimiento preventivo 
+Tipo de liderazgo
+Resultado preventivo
+Transformacional
+Alto cumplimiento SST
+Punitivo
+Ocultamiento de errores
+Pasivo
+Baja prevención
+ Fuente: Adaptado de Sankar y Anandh (2024). Navigating leadership styles through qualitative exploration for enhanced safety in the construction sector.
+ Tabla 12: Relación entre resiliencia psicológica y salud mental 
+Nivel de resiliencia psicológica
+Estado de salud mental
+Alta
+Menor ansiedad
+Media
+Estrés moderado
+Baja
+Mayor depresión
+ Fuente: Adaptado de Zhang et al. (2026). Building psychological resilience to improve the mental health of construction professionals.
+La salud mental como el liderazgo tienen gran influencia en la conciencia de la seguridad en los empleados tal como los resultados analizados de Zhang et al. (2023) y Wang et al. (2023) lo demuestran, la depresión, presión laboral y el estrés aumentan drásticamente la concentración forzando a cometer errores comunes. Del mismo modo, Thakkar y Anand (2024) concluyeron que un buen líder encargado del cumplimientos de dichas normas puede asegurar la seguridad y también implantar una cultura de la misma. Además, Zhang et al. (2026) destacaron que una flexibilidad laboral y cognitiva ayudaría a disminuir los efectos del estrés laboral generando una mejor estabilidad emocional y el liderazgo que son factores decisivos en las prevenciones de accidentes.
+Finalmente el objetivo específico N° 3: Detallar qué barreras existen en los países en desarrollo que no dejan que la gestión de seguridad sea realmente eficaz. 
+ Tabla 13: Barreras organizacionales y consecuencias en seguridad laboral 
+Barrera detectada
+Consecuencia
+Presupuesto insuficiente
+Falta de EPP
+Escasa supervisión
+Accidentes laborales
+Leyes débiles
+Bajo control preventivo
+  Fuente: Adaptado de Irfan et al. (2026). Modelado de las interrelaciones de las barreras de seguridad y salud ocupacional en el sector de la construcción de las economías en desarrollo: un enfoque PLS-SEM.
+ Tabla 14. Factores negativos que afectan el cumplimiento de SST 
+Factor negativo
+Resultado en seguridad
+Presión laboral
+Conductas inseguras
+Falta de supervisión
+Incumplimiento SST
+Estrés ocupacional
+Errores humanos
+ Fuente: Adaptado de Afuye et al. (2024). Factors influencing safety behaviours of construction tradesmen.
+ Tabla 15. Problemas regulatorios y su impacto en seguridad ocupacional 
+Problema regulatorio
+Impacto en obra
+Leyes incompletas
+Bajo cumplimiento
+Escasa fiscalización
+Accidentes frecuentes
+Diseño inseguro
+Riesgos operativos
+  Fuente: Adaptado de Hussain et al. (2026). Exploración de las capacidades regulatorias para el diseño de seguridad en la construcción: El caso de Malasia.
+Tabla 16: Fallas sistémicas en proyectos de infraestructura vial 
+Falla sistémica
+Resultado
+Falta de capacitación
+Accidentes laborales
+Mala supervisión
+Riesgos graves
+Deficiente coordinación
+Errores en obra
+Fuente: Adaptado de Liu et al. (2026).  Unraveling hierarchical penetration mechanisms and coupling relationships of safety risks in major transportation infrastructure construction using text mining and complex networks
+Según la tabla analizada, existen obstáculos en países en desarrollo que impiden implementar de manera adecuada las medidas de salud y seguridad en el trabajo. Irfan et al. (2026) evidenció que hay barreras económicas y normativas que van mermando la eficiencia de programas de prevención.  Del mismo modo, Afuye et al. (2024) descubrieron que la carga de trabajo excesiva  genera incumplimiento de las normas de seguridad para un mejor avance  que evidencia una falta de supervisión adecuada tanto al cronograma de obra como al cumplimientos de las normas. Por otro lado, Hussain et al. (2026) concluyeron que las normativas por sí misma son insuficientes por una mala inspección de seguridad que deben ser periódicas. Por último, Liu et al. (2026) los riesgos en proyectos de obras son comunes que son generados por la falta de coordinación e insuficiencia en la gestión de riesgos para poder mitigarlos. Por lo tanto, para mejorar la salud y la seguridad en el trabajo es necesario reforzar no solo la formación técnica, sino también las políticas y la supervisión. 
+III. CONCLUSIONES
+Llegamos a la conclusión de que el ruido extremo, los golpes y las caídas se mezclan con las posturas forzadas y la manipulación de cargas pesadas en el día a día de las obras viales. Vemos que el cansancio no es solo físico por estar bajo el sol intenso o cargar materiales, sino que la fatiga mental y el estrés acumulado terminan haciendo que los obreros cometan actos subestándares y errores en la pavimentación. Esto demuestra que si no controlamos bien el uso de los EPP y las posturas incómodas, la salud musculoesquelética de los trabajadores se va a ver afectada de todas maneras.
+Determinamos que la salud mental de los operarios y la forma en que los capataces o jefes de obra lideran influyen muchísimo en que se cumplan las normas de prevención. Al revisar la evidencia, nos dimos cuenta de que un liderazgo transformacional, que apoya y escucha, funciona mucho mejor para crear una cultura de seguridad que un estilo pasivo o punitivo que solo busca culpar. Además, la depresión, la presión laboral y el apuro por avanzar rápido bloquean la concentración del obrero, lo que hace que termine cometiendo descuidos y sufriendo accidentes en campo.
+Concluimos que la gestión de seguridad y salud ocupacional en países en vías de desarrollo como el Perú enfrenta trabas muy marcadas a nivel económico, de leyes y de organización. Encontramos que la falta de presupuesto para comprar buenos EPP, la debilidad en las inspecciones de seguridad y las leyes poco claras hacen que las normas se queden solo en el papel. A esto se le suma la carga excesiva de trabajo y la presión por cumplir cronogramas, lo que genera una gran discrepancia entre lo que dice la ley formalmente y lo que los obreros de primera línea terminan haciendo en la calle.
+IV. RECOMENDACIONES
+Recomendamos que las constructoras e instituciones responsables de la ejecución de pistas y veredas implementen de verdad programas de ergonomía en campo. Proponemos establecer pausas activas obligatorias y rotación constante de tareas para evitar que los obreros pasen toda la jornada en posturas forzadas. Asimismo, es clave realizar un seguimiento estricto para asegurar que todos usen EPP adecuados contra el ruido de maquinarias y la radiación solar, disminuyendo así las lesiones y la fatiga física.
+Sugerimos capacitar a los residentes, supervisores y capataces para que adopten un estilo de liderazgo transformacional, promoviendo una comunicación horizontal donde los obreros puedan reportar riesgos sin miedo a castigos. También consideramos necesario monitorear el nivel de estrés laboral mediante charlas cortas y dinámicas de soporte, dándoles flexibilidad cognitiva y organizativa para reducir la ansiedad generada por la presión de avance de la obra.
+Proponemos asegurar un presupuesto fijo y exclusivo para la seguridad laboral desde el inicio de cada proyecto de infraestructura vial, evitando que los costos de prevención se recorten para priorizar la producción. Además, creemos que es fundamental coordinar auditorías y visitas periódicas en campo junto con los entes reguladores de seguridad, garantizando que lo que exige la Ley 29783 se aplique directamente en el pavimento y no se quede solo en documentos de oficina.
+REFERENCIAS
+Afuye, O. O., Oladimeji, O., Aina, O. O., Tam, V. W. Y., & Haddad, A. N. (2024). Factors influencing safety behaviours of construction tradesmen. International Journal of Construction Management, 24, 375-384. https://doi.org/10.1080/15623599.2024.2325750 
+Al-Otaibi, M., Alshibani, A., & Al-Taisan, A. (2025). Assessing the Impact of Occupational Stress on Safety Practices in the Construction Industry: A Case Study of Saudi Arabia. Buildings, 15(16), 2895. https://doi.org/10.3390/buildings15162895 
+Alqahtani, F. M., Abas, M., Alkahtani, M., Hayat, M., & Farrukh, A. (2024). Enhancing sustainable safety practices in construction: Insights from cultural and socio-economic analysis. Sustainability, 16(12), 5103. https://doi.org/10.3390/su16125103 
+Arias, O., Groehler, J., Wolff, M., & Choi, S. D. (2023). Identification and classification of physical fatigue in construction workers using linear and nonlinear heart rate variability measurements. Journal of Construction Engineering and Management, 149(7), 04023057. https://doi.org/10.1061/JCEMD4.COENG-13100 
+Asadullah, M., Sunindijo, R. Y., & Wang, C. (2025). Relationships between occupational stress and occupational safety and health outcomes amongst construction workers: A meta-analysis of evidence from the past twenty years. Safety Science, 182, 106939. https://doi.org/10.1016/j.ssci.2025.106939 
+Azzamullah, M., et al. (2025). The relationship between fatigue and workplace accidents in the construction sector: A statistical study on contributing factors. Calamity, 3(1). https://doi.org/10.61511/calamity.v3i1.2025.2064 
+Bendi, D., & Kulkarni, P. (2024). Analyzing the role of leadership in promoting a positive safety culture in the construction sector. World Journal of Advanced Research and Reviews, 21(1), 067-075. https://doi.org/10.30574/wjarr.2024.21.1.0067 
+Castro Mejía, P. J., Campos Coronel, C. S., Ancajima Gaona, L. E., Delgado Ventura, J. F., Flores Montero, D. H. y Huilca Alcántara, W. E. (2023). Propuesta de salud y seguridad para reducir riesgos en la construcción de una escuela. Sustainability, 15(21), 15189. https://doi.org/10.3390/su152115189 
+Chen, Y., McCabe, B., & Hyatt, D. (2025). The Interplay Between Safety Leadership and Construction Workers' Safety Behavior: Do Perceived Employer Safety Obligations Matter?. Buildings, 15(2), 186. https://doi.org/10.3390/buildings15020186 
+Fang, W., Ding, L., Luo, H., & Love, P. E. (2023). Impact of physical and mental fatigue on construction workers' unsafe behavior based on physiological measurement. Journal of Safety Research, 85, 235-246. https://doi.org/10.1016/j.jsr.2023.04.014 
+Guan, et al. (2026). Examinando los factores de riesgo que influyen en los resultados de seguridad para los trabajadores migrantes chinos de la construcción en Nueva Zelanda. Engineering, Construction and Architectural Management, 33(15), 182–202. https://doi.org/10.1108/ECAM-04-2024-0451 
+Hartono, W., Kristiawan, S., Handayani, D. y Sutopo, W. (2025). Modelo de Evaluación de Riesgos de Seguridad para la Construcción de Puentes. Revista de Ingeniería Civil. https://doi.org/10.28991/cej-2025-011-01-010 
+Hussain, et al. (2026). Exploración de las capacidades regulatorias para el diseño de seguridad en la construcción: El caso de Malasia. Gestión de activos y proyectos de entorno construido, 16(2), 221–241. https://doi.org/10.1108/BEPAM-03-2025-0077 
+Irfan, et al. (2026). Modelado de las interrelaciones de las barreras de seguridad y salud ocupacional en el sector de la construcción de las economías en desarrollo: un enfoque PLS-SEM. Revista KSCE de Ingeniería Civil, 30(5), 100490. https://doi.org/10.1016/J.KSCEJ.2025.100490 
+Khaday, S., Li, K.-W., & Dorloh, H. (2023). Factors affecting preventive behaviors for safety and health at work during the COVID-19 pandemic among Thai construction workers. Healthcare, 11(3), 426. https://doi.org/10.3390/healthcare11030426 
+Liu, W., Kang, X., Ye, Q., & Xie, J. (2026). Unraveling hierarchical penetration mechanisms and coupling relationships of safety risks in major transportation infrastructure construction using text mining and complex networks. Scientific Reports, 16. https://doi.org/10.1038/s41598-026-37778-3 
+Nnaji, C., Jin, Z., & Karakhan, A. (2022). Safety and health management response to COVID-19 in the construction industry: A perspective of fieldworkers. Process Safety and Environmental Protection, 159, 477-488. https://doi.org/10.1016/j.psep.2022.01.002 
+Oropesa, C. M. (2025). Impact of Fatigue and Sleepiness on the Incidence of Occupational Accidents in the Preparation, Construction and Manufacture of the tire Industry. Ciencia Latina Revista Científica Multidisciplinar, 9(4). https://doi.org/10.37811/cl_rcm.v9i4.19450 
+Qi, L., Zhai, H., & Shuang, Q. (2026). Attention-driven multiobject tracking for proactive fall safety management in construction. Journal of Construction Engineering and Management, 152(5). https://doi.org/10.1061/JCEMD4.COENG-17793 
+Riana, Y., et al. (2024). Ergonomics and health risk awareness of workers involved in manual material handling. International Journal of Occupational Safety and Ergonomics. https://doi.org/10.1080/10803548.2024.2383060 
+ 
+Samuelsson, A. U., Larsman, P. y Grill, M. (2026). Predicando con el ejemplo de seguridad: explorando el sistema organizacional de contingencias de seguridad y su relación con el liderazgo en seguridad. Revista de investigación de seguridad, 96, 214–222. https://doi.org/10.1016/J.JSR.2025.12.010 
+Sankar, S. S., & Anandh, K. S. (2024). Navigating leadership styles through qualitative exploration for enhanced safety in the construction sector. Safety Science, 175, 106495. https://doi.org/10.1016/j.ssci.2024.106495 
+Sari, M., et al. (2023). The Influence of Leadership and the Implementation of Occupational Safety and Health (OSH) on the Performance of Construction Employees. Management Science Research Journal, 4(4). https://doi.org/10.56548/msr.v4i4.177 
+Seo, J., & Lee, S. (2026). Ergonomic Risk and Musculoskeletal Disorders in Construction: Assessing Job-Related Determinants in the U.S. Workforce. Buildings, 16(2), 286. https://doi.org/10.3390/buildings16020286 
+Sorooshian, S., et al. (2023). A review of construction workforce health challenges and strategies. International Journal of Occupational Safety and Ergonomics. https://doi.org/10.1080/10803548.2022.2076043 
+Tatli, S., & Marhavilas, P. (2024). Elaboration and Analysis of SARS-CoV-2 Data in the Frame of Occupational Safety and Health Assessment in Sustainable Engineering Systems. Safety. https://doi.org/10.3390/safety10010006 
+Utami, I., & Setyawan, A. (2025). Maintaining Occupational Health: An Analysis of Fatigue and Safety Compliance in Construction Workers. Journal Epidemiology and Public Health, 10(2), 11-20. https://doi.org/10.26911/jepublichealth.2025.10.02.11 
+Wang, Y., et al. (2023). Stress, fear, and anxiety among construction workers: A systematic review. Frontiers in Public Health, 11. https://doi.org/10.3389/fpubh.2023.1226914 
+Zhang, S., Duan, J., Sunindijo, R. Y., & Xu, Q. (2026). Building psychological resilience to improve the mental health of construction professionals. Journal of Construction Engineering and Management, 152(4). https://doi.org/10.1061/JCEMD4.COENG-17197 
+Zhang, S., Sunindijo, R. Y., Frimpong, S., & Su, Z. (2023). Work stressors, coping strategies, and poor mental health in the Chinese construction industry. Safety Science, 159, 106039. https://doi.org/10.1016/j.ssci.2022.106039 
+ANEXOS

@@ -1,0 +1,108 @@
+================================================================================
+GUÍA TÉCNICA DE DISEÑO: COLORES, TIPOGRAFÍA Y ESTRUCTURA VISUAL (DARK/CYAN THEME)
+================================================================================
+
+Esta guía resume las especificaciones de diseño basadas exactamente en la imagen 
+de referencia que proporcionaste para la presentación. Estos elementos aseguran 
+un estilo moderno, premium y altamente interactivo.
+
+--------------------------------------------------------------------------------
+1. CODIFICACIÓN DE COLORES (CROMÁTICA DE ALTO CONTRASTE)
+--------------------------------------------------------------------------------
+La presentación alterna constantemente entre fondos oscuros (modo noche) y fondos 
+sólidos turquesas para generar dinamismo y evitar la monotonía visual.
+
+- Negro Profundo (Fondo principal de diapositivas oscuras):
+  * HEX: #0A0A0B
+  * RGB: rgb(10, 10, 11)
+  * Uso: Color de fondo predominante.
+
+- Gris Antracita (Tarjetas, contenedores de texto y formas de fondo):
+  * HEX: #161A1D
+  * RGB: rgb(22, 26, 29)
+  * Uso: Fondo de tarjetas para separar contenidos y dar relieve.
+
+- Turquesa / Cian Eléctrico (Color de acento primario y fondo alterno):
+  * HEX: #00C2D1
+  * RGB: rgb(0, 194, 209)
+  * Uso: Fondos de diapositivas completas (ej. Diapositiva de Conclusiones), 
+         marcos de fotos, botones redondeados, títulos y números destacados.
+
+- Blanco Nieve (Texto principal sobre fondos oscuros):
+  * HEX: #FFFFFF
+  * RGB: rgb(255, 255, 255)
+  * Uso: Títulos principales, textos descriptivos generales.
+
+- Negro Sólido (Texto sobre fondos cian):
+  * HEX: #000000
+  * RGB: rgb(0, 0, 0)
+  * Uso: Todo texto que deba escribirse dentro de bloques o fondos turquesas.
+
+--------------------------------------------------------------------------------
+2. TIPOGRAFÍAS RECOMENDADAS (TYPOGRAPHY SYSTEM)
+--------------------------------------------------------------------------------
+Para imitar el estilo limpio y de "startup tecnológica" de la imagen, se deben usar 
+fuentes sans-serif geométricas modernas.
+
+- Fuente para Títulos (Header Font):
+  * Familia sugerida: Montserrat, Outfit, Syne o Space Grotesk.
+  * Estilo: Negrita (Bold / Extra Bold - Peso 700 u 800).
+  * Variación de Estilo: Títulos escritos totalmente en MINÚSCULAS para dar una 
+    estética minimalista y moderna (ej: "nuestra misión", "historia", "nuestros valores").
+
+- Fuente para Cuerpo y Tablas (Body Font):
+  * Familia sugerida: Inter, Roboto o Spline Sans.
+  * Estilo: Regular o Light (Peso 300 o 400).
+  * Uso: Para la información de las tablas, referencias, autores y viñetas descriptivas.
+
+--------------------------------------------------------------------------------
+3. ELEMENTOS DE VISUALIZACIÓN Y COMPONENTES GRÁFICOS
+--------------------------------------------------------------------------------
+La imagen de muestra utiliza varios recursos geométricos y de diseño que debes aplicar:
+
+- Botones y Píldoras Redondeadas (Pills & Badges):
+  * Uso: Sirven para enmarcar nombres de autores, puestos de trabajo ("Gerente de ventas") 
+    o etiquetas de importancia ("sociedad positiva", "RSL 2026").
+  * Estilo: Bordes completamente redondeados (border-radius de 50px). Relleno turquesa 
+    con texto negro, o relleno blanco con texto negro.
+
+- Marcos de Fotos con Esquinas Redondeadas:
+  * Las fotos de personas u obras no deben ser cuadradas ordinarias.
+  * Deben tener esquinas curvas (border-radius de 15px a 20px) e ir metidas dentro de 
+    un contenedor turquesa más grande que actúe como un marco asimétrico grueso, 
+    o tener un borde turquesa y blanco.
+
+- Semicírculos Decorativos en Esquinas:
+  * En la esquina superior derecha o inferior izquierda de las diapositivas oscuras, 
+    coloca formas circulares o semicírculos en turquesa o blanco que sobresalgan del borde. 
+    Esto corta la rigidez rectangular de la diapositiva.
+
+- Tarjetas de Estadísticas (Metric Cards):
+  * Para datos como porcentaje de riesgo o número de artículos, usa textos en tamaño gigante 
+    (ej: "+100", "35%", "+1 M") con un fondo tipo píldora oscura o blanca y el nombre del 
+    indicador abajo en texto pequeño.
+
+- Gráfico de Línea de Tiempo (Timeline Graphic):
+  * Línea horizontal de color turquesa.
+  * Bolas o cápsulas redondeadas blancas/turquesas que cortan la línea con los años (2010, 2012, etc.).
+  * Columnas verticales de texto blanco y cian que bajan desde cada año explicando el avance histórico.
+
+--------------------------------------------------------------------------------
+4. EJEMPLOS DE DISEÑO DE DIAPOSITIVAS BASADOS EN LA REFERENCIA
+--------------------------------------------------------------------------------
+- Diapositiva Tipo A (Fondo Turquesa):
+  Fondo: #00C2D1 (Turquesa).
+  Texto: #000000 (Negro).
+  Estructura: Foto en blanco y negro a la derecha con marco negro grueso. Título y 
+  contenido en texto negro grueso a la izquierda. Botón redondeado en negro con texto blanco.
+
+- Diapositiva Tipo B (Fondo Oscuro):
+  Fondo: #0A0A0B (Negro).
+  Texto: #FFFFFF (Blanco).
+  Estructura: Título de sección en minúsculas en color blanco y turquesa. 
+  Contenedores de información en gris oscuro (#161A1D) con bordes turquesas. 
+  Detalle semicircular turquesa en la esquina superior derecha.
+
+================================================================================
+FIN DE LA GUÍA DE VISUALIZACIÓN
+================================================================================

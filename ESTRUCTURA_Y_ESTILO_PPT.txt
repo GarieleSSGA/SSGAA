@@ -1,0 +1,245 @@
+================================================================================
+ESTRUCTURA, CONTENIDOS Y DISEÑO DE LA PRESENTACIÓN DE GESTIÓN (PPT)
+================================================================================
+
+Este documento contiene la estructura detallada diapositiva por diapositiva para el 
+diseño de la presentación académica basada en la revisión sistemática de seguridad 
+y salud ocupacional en obras viales. 
+
+El diseño visual está inspirado estrictamente en la imagen de referencia: 
+un estilo moderno de alto contraste con temática oscura (Dark Mode) en negro y 
+antracita, combinado con un color de acento turquesa/cian vibrante y texto en blanco.
+
+--------------------------------------------------------------------------------
+1. ESPECIFICACIONES GENERALES DEL ESTILO VISUAL
+--------------------------------------------------------------------------------
+- PALETA DE COLORES:
+  * Fondo Principal: Negro Puro (#050505) o Gris Antracita Oscuro (#121212).
+  * Color de Acento: Turquesa/Cian Vibrante (#00C2D1).
+  * Texto Principal: Blanco Brillante (#FFFFFF).
+  * Texto Secundario: Turquesa Claro o Gris Plata (#E0E0E0).
+  * Contenedores/Tarjetas: Gris Oscuro (#1F1F1F) con bordes delgados turquesa.
+- TIPOGRAFÍA RECOMENDADA:
+  * Títulos: Outfit, Montserrat o Space Grotesk (fuente geométrica sans-serif, gruesa).
+  * Cuerpo de texto: Inter o Roboto (alta legibilidad, peso ligero o medio).
+- DIRECTRICES DE DIAGRAMACIÓN:
+  * Usar textos cortos y concisos. Evitar párrafos largos de texto.
+  * Títulos principales de sección escritos preferiblemente en minúsculas (ej: "qué veremos hoy", "historia").
+  * Las imágenes deben ser en blanco y negro o con un filtro frío/cian, enmarcadas en contenedores con bordes redondeados y marcos cian.
+  * Usar detalles decorativos circulares o semicírculos turquesas/blancos en las esquinas de algunas diapositivas para romper la cuadrícula.
+  * Reemplazar las viñetas comunes por números circulares, formas geométricas u hojas de estilo tipo tarjeta.
+
+--------------------------------------------------------------------------------
+2. CONTENIDO DIAPOSITIVA POR DIAPOSITIVA
+--------------------------------------------------------------------------------
+
+DIAPOSITIVA 1: Portada (Title Slide)
+----------------------------------------------------
+- TIPO DE CONTENIDO: Título principal de la investigación y presentación de autores.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO PRINCIPAL (Gran tamaño, Blanco):
+    Gestión de seguridad y salud ocupacional y nivel de riesgo laboral en obras viales: revisión sistemática
+  * SUBTÍTULO O DATOS DE AUTORES (Blanco/Turquesa):
+    - Autores: Aliaga R., Espinoza F., Layza M., Lopez C., Maravi J., Mauli N., Rios B., Sosa G.
+    - Asesor: Mg. Guillen Cabrera, Jaime Jesus
+    - Universidad César Vallejo | VII Ciclo | Lima Este - 2026
+- DISEÑO VISUAL: 
+  * Fondo negro. Una franja o bloque turquesa en la parte superior que contenga una imagen en blanco y negro de trabajadores en obra vial.
+  * Un botón tipo píldora redondeada de color turquesa con el texto negro indicando "REVISIÓN SISTEMÁTICA".
+  * Logotipo de la universidad o del grupo en la esquina inferior derecha.
+
+DIAPOSITIVA 2: qué veremos hoy (Agenda/Índice)
+----------------------------------------------------
+- TIPO DE CONTENIDO: Índice o temario de la presentación.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: qué veremos hoy (en minúsculas, fuente grande)
+  * ELEMENTOS DE LA LISTA:
+    01  Introducción y realidad problemática
+    02  Formulación de problemas y objetivos
+    03  Metodología de la revisión (RSL - PRISMA)
+    04  Resultados 1: Factores de riesgo y fatiga fisiológica
+    05  Resultados 2: Liderazgo y salud mental en obra
+    06  Resultados 3: Barreras organizacionales en países en desarrollo
+    07  Conclusiones y Recomendaciones
+- DISEÑO VISUAL:
+  * Fondo negro con textos en blanco.
+  * A la izquierda, los números 01, 02, etc. alineados verticalmente en turquesa.
+  * A la derecha, un botón/cápsula redondeada que diga "comencemos" o "siguiente".
+
+DIAPOSITIVA 3: Introducción y Realidad Problemática
+----------------------------------------------------
+- TIPO DE CONTENIDO: Contextualización del problema a nivel mundial, nacional y local.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: realidad problemática
+  * PUNTOS CLAVE:
+    - Sector vial: Altas tasas de accidentes laborales por la complejidad y uso de maquinaria pesada.
+    - Contexto nacional (Perú): Gran discrepancia entre la normativa de seguridad en papel (Ley 29783) y la práctica real en el pavimento.
+    - Entorno hostil: Trabajadores expuestos a calor extremo, ruido nocivo y presiones de avance temporal.
+- DISEÑO VISUAL:
+  * Layout de 2 columnas.
+  * Columna Izquierda: Los tres puntos clave en tarjetas grises oscuras con borde turquesa.
+  * Columna Derecha: Imagen a pantalla completa de pavimentación vial con filtro cian o blanco y negro, con esquinas redondeadas.
+
+DIAPOSITIVA 4: Formulación del Problema y Objetivos
+----------------------------------------------------
+- TIPO DE CONTENIDO: Preguntas y objetivos específicos del estudio.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: problema y objetivos
+  * ESTRUCTURA EN PARALELO (Problema vs Objetivo):
+    - PE1 / OE1: Riesgos físicos, ergonómicos y psicosociales más reportados en obras.
+    - PE2 / OE2: Influencia del liderazgo y la salud mental (estrés) del obrero.
+    - PE3 / OE3: Barreras que hacen fallar la gestión en países en desarrollo.
+- DISEÑO VISUAL:
+  * 3 grandes bloques horizontales. Cada bloque representa un eje de investigación (Eje 1, Eje 2, Eje 3).
+  * Los problemas van en texto blanco y los objetivos se resaltan en cajas con fondo turquesa y letras negras para denotar acción.
+
+DIAPOSITIVA 5: Justificación del Estudio
+----------------------------------------------------
+- TIPO DE CONTENIDO: Utilidad social, práctica y metodológica de la investigación.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: justificación
+  * TRES PILARES:
+    - 1. Social: Asegurar que las familias cuenten con el retorno seguro del trabajador a su hogar mediante prevención eficaz.
+    - 2. Práctica/Técnica: Reducir pérdidas de tiempo y fallas operativas en campo al consolidar la mejor evidencia internacional.
+    - 3. Metodológica: Servir de base para futuras auditorías de obras públicas y cumplimiento de la ley nacional.
+- DISEÑO VISUAL:
+  * 3 tarjetas verticales de fondo gris oscuro (#1F1F1F) con bordes turquesas.
+  * En la parte superior de cada tarjeta, un icono o número gigante en cian (01, 02, 03).
+
+DIAPOSITIVA 6: Marco Teórico - Liderazgo y Salud Mental
+----------------------------------------------------
+- TIPO DE CONTENIDO: Fundamentos teóricos aplicados al comportamiento del obrero.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: bases teóricas
+  * TEORÍAS PRINCIPALES:
+    - Liderazgo Transformacional: El capataz que inspira modula conductas seguras, mientras que el liderazgo punitivo/transaccional fomenta que se oculten los errores (Sankar & Anandh, 2024).
+    - Agotamiento y Estrés Laboral: La presión del cronograma genera fatiga mental, disminuyendo la concentración y disparando accidentes (Zhang et al., 2023).
+- DISEÑO VISUAL:
+  * Fondo gris oscuro.
+  * Esquema comparativo. A la izquierda, tarjeta turquesa de "Liderazgo Positivo". A la derecha, tarjeta negra con bordes blancos de "Presión y Fatiga".
+
+DIAPOSITIVA 7: Marco Teórico - Ergonomía y Fisiología
+----------------------------------------------------
+- TIPO DE CONTENIDO: Teorías del desgaste físico en el trabajo civil.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: ergonomía y fatiga física
+  * CONCEPTOS:
+    - Fatiga Fisiológica: Medible mediante la variabilidad de frecuencia cardíaca (VFC) para rastrear el desgaste del operario en tiempo real (Arias et al., 2023).
+    - Trastornos Musculoesqueléticos: Lesiones en la zona lumbar provocadas por posturas forzadas y movimientos repetitivos (Seo & Lee, 2026).
+- DISEÑO VISUAL:
+  * Diagrama lineal o flujo horizontal que conecte: Carga Física de Trabajo -> Fatiga Fisiológica (VFC) -> Trastorno Musculoesquelético -> Conducta Insegura (Accidente).
+  * Usar conectores en forma de líneas turquesa gruesas.
+
+DIAPOSITIVA 8: Metodología (RSL - PRISMA)
+----------------------------------------------------
+- TIPO DE CONTENIDO: Detalle del diseño de investigación y selección de muestra.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: método de investigación
+  * CARACTERÍSTICAS:
+    - Tipo: Básica, cualitativa y documental.
+    - Diseño: Revisión Sistemática de la Literatura (RSL) siguiendo la declaración PRISMA.
+    - Muestra de Análisis: 17 artículos científicos rigurosamente seleccionados (Scopus Q1/Q2, Web of Science, periodo 2022-2026).
+- DISEÑO VISUAL:
+  * Layout premium con "Métricas Clave" (KPI Cards):
+    * Caja 1 (Fondo Turquesa, Texto Negro): "+17" (Artículos de alto impacto).
+    * Caja 2 (Fondo Negro, Borde Turquesa): "Q1/Q2" (Calidad Scopus/WoS).
+    * Caja 3 (Fondo Negro, Borde Blanco): "PRISMA" (Metodología estándar).
+
+DIAPOSITIVA 9: Resultados - Factores de Riesgo Sistémicos
+----------------------------------------------------
+- TIPO DE CONTENIDO: Presentación de los factores que causan riesgos a nivel general (Objetivo General).
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: factores de riesgo sistémico
+  * DATOS CLAVE (Tablas 1 y 2):
+    - Falta de capacitación y Supervisión deficiente: Impacto ALTO (Causan incremento de accidentes).
+    - Presión de tiempo: Impacto ALTO (Provoca conductas inseguras y atajos).
+    - Percepción del Riesgo en Obreros: 35% Alto, 31% Moderado, solo 20% Bajo (Castro et al., 2023).
+- DISEÑO VISUAL:
+  * A la izquierda, una tabla simplificada de alto contraste con los riesgos sistémicos.
+  * A la derecha, un gráfico circular o de barras turquesa que muestre la percepción del riesgo (35% Alto, 31% Moderado, etc.).
+
+DIAPOSITIVA 10: Resultados - Riesgos Físicos y Ergonómicos (OE1)
+----------------------------------------------------
+- TIPO DE CONTENIDO: Análisis del desgaste muscular, fatiga y posturas forzadas.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: riesgos físicos y ergonómicos
+  * MAPA DE LESIONES (Tabla 7 y 8):
+    - Posturas forzadas: Dolor lumbar (Alto impacto).
+    - Manipulación manual de cargas: Lesiones musculares y fatiga.
+    - Riesgos Físicos Directos: Caídas y golpes por falta de EPP adecuado; exposición constante a ruido y vibración.
+- DISEÑO VISUAL:
+  * Representación iconográfica.
+  * Tarjetas individuales para cada riesgo, con etiquetas en cian tipo "ALTO" o "CRÍTICO".
+  * Imagen a la derecha de un trabajador en pavimentación para ilustrar las posturas forzadas.
+
+DIAPOSITIVA 11: Resultados - Liderazgo y Salud Mental (OE2)
+----------------------------------------------------
+- TIPO DE CONTENIDO: Cómo influyen la mente del trabajador y el estilo del capataz en la seguridad.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: liderazgo y salud mental
+  * HALLAZGOS PRINCIPALES (Tablas 9, 10, 11 y 12):
+    - Liderazgo Transformacional: Fomenta el alto cumplimiento de normas de seguridad.
+    - Liderazgo Punitivo/Pasivo: Genera ocultamiento de errores y baja prevención.
+    - Salud Mental: El estrés laboral y la ansiedad (provocados por supervisión abusiva o jornadas extensas) sabotean la concentración de los obreros.
+- DISEÑO VISUAL:
+  * Cuadrícula de 2x2.
+  * Dos tarjetas en la parte superior que comparan "Liderazgo Positivo" vs "Liderazgo Negativo".
+  * Dos tarjetas en la parte inferior que explican "Estresores" vs "Consecuencias laborales".
+
+DIAPOSITIVA 12: Resultados - Barreras en Países en Desarrollo (OE3)
+----------------------------------------------------
+- TIPO DE CONTENIDO: Factores socioeconómicos e institucionales que impiden la prevención.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: barreras en economías en desarrollo
+  * BARRERAS DETECTADAS (Tablas 13, 14, 15 y 16):
+    - 1. Económica: Presupuesto insuficiente para la compra de EPP y equipos de seguridad.
+    - 2. Regulatoria: Leyes débiles o incompletas en campo y escasa fiscalización/inspección.
+    - 3. Organizacional: Carga de trabajo excesiva para avanzar rápido, ignorando la SST.
+- DISEÑO VISUAL:
+  * Slide dividido en 3 columnas verticales.
+  * Cada columna tiene un color y estilo diferente (una en fondo turquesa, otra en gris oscuro con bordes blancos, otra en gris oscuro con bordes turquesas) para crear ritmo visual.
+
+DIAPOSITIVA 13: Conclusiones
+----------------------------------------------------
+- TIPO DE CONTENIDO: Síntesis de los tres hallazgos clave del estudio.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: conclusiones
+  * CONCLUSIONES CLAVE:
+    - 01 La fatiga física (ergonómica) y mental (estrés) se combinan para provocar actos inseguros y errores en pavimentación.
+    - 02 El liderazgo transformacional de los capataces es decisivo para contrarrestar la fatiga y el ocultamiento de incidentes.
+    - 03 Existen fuertes barreras económicas y regulatorias que hacen que las políticas de seguridad se queden solo en el papel.
+- DISEÑO VISUAL:
+  * Diapositiva de alto impacto: Fondo completamente turquesa con textos y números grandes en negro.
+  * Estructura limpia y minimalista.
+
+DIAPOSITIVA 14: Recomendaciones
+----------------------------------------------------
+- TIPO DE CONTENIDO: Propuestas prácticas para mejorar la gestión en campo.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: recomendaciones
+  * RECOMENDACIONES CLAVE:
+    - 01 Implementar programas de ergonomía activa (pausas obligatorias y rotación de tareas para evitar dolor lumbar).
+    - 02 Capacitar a residentes y capataces en liderazgo transformacional y realizar charlas cortas de soporte emocional.
+    - 03 Asignar un presupuesto fijo intocable para seguridad e inspecciones periódicas y exhaustivas en el pavimento.
+- DISEÑO VISUAL:
+  * Retorno al fondo negro.
+  * 3 tarjetas en horizontal con bordes redondeados cian y texto blanco.
+  * Iconos lineales cian para representar "Acción/Herramienta", "Personas/Liderazgo", y "Presupuesto/Leyes".
+
+DIAPOSITIVA 15: Cierre y Agradecimientos
+----------------------------------------------------
+- TIPO DE CONTENIDO: Despedida y sección de preguntas.
+- TEXTO EN DIAPOSITIVA:
+  * TÍTULO: muchas gracias
+  * SUBTÍTULO: ¿Preguntas o comentarios?
+  * TEXTO COMPLEMENTARIO:
+    Gestión de seguridad y salud ocupacional en obras viales
+    Grupo de Investigación VII Ciclo - UCV 2026
+- DISEÑO VISUAL:
+  * Fondo negro con un semicírculo turquesa gigante en la esquina inferior izquierda.
+  * Títulos alineados a la derecha en tipografía gigante y limpia.
+  * Un botón redondeado turquesa con la palabra "FIN" o el logotipo del grupo.
+
+================================================================================
+FIN DEL DOCUMENTO DE PLANIFICACIÓN DEL PPT
+================================================================================

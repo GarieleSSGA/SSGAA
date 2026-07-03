@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Seguridad y Salud Ocupacional y Nivel de Riesgo Laboral en Obras Viales: Revisión Sistemática</title>
+  <!-- Google Fonts: Outfit for Headers, Inter for Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================
+       DESIGN SYSTEM & RESET
+       ========================================== */
+    :root {
+      --bg-dark: #070708;
+      --bg-card: #121517;
+      --accent: #00C2D1;
+      --accent-hover: #00e5f7;
+      --text-light: #FFFFFF;
+      --text-muted: #A0A5AA;
+      --text-dark: #000000;
+      --border-color: #222b30;
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      --font-header: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition-speed: 0.5s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      user-select: none;
+    }
+
+    /* ==========================================
+       BACKGROUND DECORATIONS (AS SEEN IN IMAGE)
+       ========================================== */
+    .decor-corner {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 194, 209, 0.12) 0%, rgba(0,0,0,0) 70%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .decor-top-right {
+      top: -150px;
+      right: -150px;
+    }
+    .decor-bottom-left {
+      bottom: -150px;
+      left: -150px;
+    }
+    .decor-accent-circle {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      top: 50px;
+      right: 50px;
+      opacity: 0.8;
+      z-index: 2;
+    }
+    .decor-accent-semicircle {
+      position: absolute;
+      width: 120px;
+      height: 60px;
+      background-color: var(--accent);
+      border-radius: 120px 120px 0 0;
+      bottom: 0;
+      right: 15%;
+      z-index: 2;
+      opacity: 0.9;
+    }
+    .decor-top-semicircle {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      background-color: var(--accent);
+      border-radius: 0 0 100px 100px;
+      top: 0;
+      left: 10%;
+      z-index: 2;
+    }
+
+    /* ==========================================
+       PRESENTATION CONTAINER
+       ========================================== */
+    .presentation-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    /* ==========================================
+       ACADEMIC HEADER (UCV LOGO)
+       ========================================== */
+    .presentation-header {
+      height: 75px;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-dark);
+      z-index: 20;
+    }
+
+    .ucv-logo-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-academic-track {
+      font-family: var(--font-header);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       SLIDE WRAPPER
+       ========================================== */
+    .slides-wrapper {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(50px);
+      transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility 0s linear var(--transition-speed);
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(0);
+      transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility 0s linear 0s;
+      z-index: 10;
+    }
+
+    .slide.exit {
+      opacity: 0;
+      visibility: visible;
+      pointer-events: none;
+      transform: translateX(-50px);
+      transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility 0s linear 0s;
+    }
+
+    /* ==========================================
+       TYPOGRAPHY & GLOBAL STYLES (CAPITALIZED)
+       ========================================== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-header);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .slide-title {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-light);
+      position: relative;
+      display: inline-block;
+      line-height: 1.1;
+    }
+
+    .slide-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 80px;
+      height: 5px;
+      background-color: var(--accent);
+      border-radius: 3px;
+    }
+
+    /* ==========================================
+       MEDIA / GRAPHICS STYLING (OCCUPYING SPACE)
+       ========================================== */
+    .slide-media-container {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-media-img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 5px solid var(--accent);
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s ease;
+    }
+
+    .slide-media-img:hover {
+      border-color: var(--text-light);
+    }
+
+    /* ==========================================
+       LAYOUT STYLES (LARGER SPACING)
+       ========================================== */
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+      height: calc(100% - 40px);
+    }
+
+    .col-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .card-detail {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.8rem;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .card-detail h3 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    .card-detail p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+
+    /* Agenda Grid (Bigger) */
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      background-color: var(--bg-card);
+      padding: 1.8rem 2.2rem;
+      border-radius: 14px;
+      border-left: 6px solid var(--accent);
+      transition: transform 0.3s ease, border-left-color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .agenda-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .agenda-num {
+      font-family: var(--font-header);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-right: 1.8rem;
+      min-width: 50px;
+    }
+
+    .agenda-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    /* Problems and Objectives Layout */
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .problem-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 440px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .problem-box:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .problem-num {
+      font-family: var(--font-header);
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .problem-desc {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      font-weight: 500;
+      color: var(--text-light);
+      flex: 1;
+      margin-bottom: 1.8rem;
+    }
+
+    .objective-pill {
+      background-color: var(--accent);
+      color: var(--text-dark);
+      padding: 1.1rem;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* Justification Pillars */
+    .justif-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .justif-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .justif-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .justif-icon {
+      font-family: var(--font-header);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      line-height: 1;
+    }
+
+    .justif-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .justif-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* Theory Cards */
+    .theory-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .theory-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .theory-card.highlighted {
+      border: 2px solid var(--accent);
+    }
+
+    .theory-card h3 {
+      color: var(--accent);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .theory-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .theory-author {
+      align-self: flex-start;
+      background-color: rgba(0, 194, 209, 0.12);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 600;
+      border: 1px solid rgba(0, 194, 209, 0.2);
+    }
+
+    /* Methodology categories */
+    .cats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .cat-column {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .cat-column.accented {
+      border-color: var(--accent);
+    }
+
+    .cat-header {
+      font-family: var(--font-header);
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .subcat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .subcat-item {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 1.2rem;
+      border-radius: 10px;
+      border-left: 5px solid var(--accent);
+    }
+
+    .subcat-item h4 {
+      font-family: var(--font-header);
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .subcat-item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Results layout */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      height: calc(100% - 40px);
+    }
+
+    /* Tables styling (Occupying space) */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    th {
+      background-color: rgba(0, 194, 209, 0.1);
+      font-family: var(--font-header);
+      font-weight: 700;
+      color: var(--accent);
+      padding: 16px 20px;
+      border-bottom: 2px solid var(--border-color);
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .citation-tag {
+      font-family: var(--font-header);
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.85rem;
+      background-color: rgba(0, 194, 209, 0.12);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      border: 1px solid rgba(0, 194, 209, 0.2);
+    }
+
+    /* Cover specific banner */
+    .slide-cover {
+      background: radial-gradient(circle at 85% 15%, #12181b 0%, var(--bg-dark) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 80px;
+    }
+
+    .cover-main-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: center;
+      flex: 1;
+      margin: 1.5rem 0;
+    }
+
+    .cover-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      font-weight: 800;
+    }
+
+    .cover-title span {
+      color: var(--accent);
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+    }
+
+    /* Conclusions Slide (Cyan background) */
+    .slide-conclusions {
+      background-color: var(--accent);
+      color: var(--text-dark);
+      padding: 60px 80px;
+    }
+
+    .slide-conclusions .slide-title {
+      color: var(--text-dark);
+    }
+
+    .slide-conclusions .slide-title::after {
+      background-color: var(--text-dark);
+    }
+
+    .concl-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .concl-item {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .concl-num {
+      font-family: var(--font-header);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1;
+      margin-right: 2rem;
+      opacity: 0.35;
+    }
+
+    .concl-body h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .concl-body p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    /* Recommendations layout */
+    .recom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .recom-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      border-top: 6px solid var(--accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .recom-num {
+      font-family: var(--font-header);
+      font-size: 1.3rem;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+    }
+
+    .recom-card h3 {
+      font-size: 1.5rem;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .recom-card p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* Presentation Footer */
+    .presentation-footer {
+      height: 60px;
+      border-top: 1px solid var(--border-color);
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-dark);
+      z-index: 20;
+    }
+
+    .presentation-title-footer {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-header);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .btn-control {
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .btn-control:hover {
+      background-color: var(--accent);
+      color: var(--text-dark);
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(0, 194, 209, 0.5);
+    }
+
+    .slide-indicator {
+      font-family: var(--font-header);
+      font-size: 1rem;
+      font-weight: 700;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .slide-indicator span {
+      color: var(--accent);
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: #121517;
+      z-index: 25;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+      box-shadow: 0 0 12px rgba(0, 194, 209, 0.6);
+    }
+
+    .badge-impact {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-impact.high {
+      background-color: rgba(209, 0, 0, 0.15);
+      color: #ff5252;
+      border: 1px solid rgba(259, 82, 82, 0.3);
+    }
+
+    .badge-impact.medium {
+      background-color: rgba(209, 150, 0, 0.15);
+      color: #ffb13b;
+      border: 1px solid rgba(255, 177, 59, 0.3);
+    }
+
+    /* Fallback de Pantalla Completa (Simulado dentro del iframe de Canva) */
+    body.mock-fullscreen-active .presentation-header {
+      display: none !important;
+    }
+
+    body.mock-fullscreen-active .presentation-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(7, 7, 8, 0.9) !important;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      opacity: 0.15;
+      transition: opacity 0.3s ease;
+      z-index: 100;
+    }
+
+    body.mock-fullscreen-active .presentation-footer:hover {
+      opacity: 1;
+    }
+
+    body.mock-fullscreen-active .slides-wrapper {
+      height: 100vh !important;
+    }
+
+    body.mock-fullscreen-active .slide {
+      padding: 30px 60px 90px 60px !important; /* Margen inferior para que no tape los controles flotantes */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Blurs -->
+  <div class="decor-corner decor-top-right"></div>
+  <div class="decor-corner decor-bottom-left"></div>
+
+  <div class="presentation-container">
+    
+    <!-- ACADEMIC HEADER (UCV LOGO) -->
+    <div class="presentation-header" style="display: none;">
+      <div class="ucv-logo-header">
+        <svg viewBox="0 0 200 60" width="150" height="42">
+          <!-- Shield shape with UCV official colors (Navy Blue & Crimson Red) -->
+          <path d="M10 5 h25 v25 c0 12 -12 16 -12 16 c0 0 -12 -4 -12 -16 Z" fill="#0c3c60" />
+          <path d="M22 5 h13 v25 c0 12 -12 16 -12 16 Z" fill="#d12e2e" />
+          <!-- White Monogram letters inside the shield -->
+          <text x="13" y="24" font-family="'Outfit', sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">U</text>
+          <text x="19" y="30" font-family="'Outfit', sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">C</text>
+          <text x="25" y="24" font-family="'Outfit', sans-serif" font-size="9" font-weight="800" fill="#FFFFFF">V</text>
+          <!-- Institutional brand text -->
+          <text x="45" y="24" font-family="'Outfit', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">UCV</text>
+          <text x="45" y="35" font-family="'Inter', sans-serif" font-size="6.5" font-weight="600" fill="#A0A5AA" letter-spacing="0.2">UNIVERSIDAD CÉSAR VALLEJO</text>
+        </svg>
+      </div>
+      <div class="header-academic-track">Escuela Profesional de Ingeniería Civil</div>
+    </div>
+
+    <!-- SLIDES WRAPPER -->
+    <div class="slides-wrapper">
+
+      <!-- SLIDE 1: Portada (Title) -->
+      <div class="slide slide-cover active" id="slide-1">
+        <div class="decor-accent-circle"></div>
+        <div class="cover-header" style="display: flex; gap: 1rem;">
+          <div class="cover-badge" style="background-color: var(--accent); color: var(--text-dark); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-family: var(--font-header); font-size: 0.85rem; text-transform: uppercase;">Investigación Vial</div>
+          <!-- UCV text label -->
+          <div class="cover-badge" style="border: 1px solid var(--border-color); color: var(--text-light); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-family: var(--font-header); font-size: 0.85rem; text-transform: uppercase;">Universidad César Vallejo</div>
+        </div>
+        
+        <div class="cover-main-grid">
+          <div>
+            <!-- Exact Title of the Report capitalized -->
+            <h1 class="cover-title" style="font-size: 2.8rem; font-weight: 800; line-height: 1.25;">
+              Gestión de Seguridad y Salud Ocupacional y Nivel de Riesgo Laboral en Obras Viales: <span>Revisión Sistemática</span>
+            </h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); font-family: var(--font-header); margin-top: 1rem;">
+              Revisión Sistemática de la Literatura Académica Reciente (2022-2026)
+            </p>
+          </div>
+          <div class="slide-media-container">
+            <!-- Actual generated photo of paving construction -->
+            <img class="slide-media-img" src="road_construction_paving.png" alt="Trabajo de pavimentación vial">
+          </div>
+        </div>
+        
+        <div class="cover-footer">
+          <div class="authors-list" style="font-size: 1rem; line-height: 1.6;">
+            <strong>Autores:</strong> Aliaga Tocasca, Ruben Salvador | Espinoza Vega, Fernando Augusto | Layza Yauri, Maria Virginia | Lopez Flores, Cristian | Maravi Toribio, Janeth Silvia | Mauli Roca, Ninkor | Rios Tello, Brayan Migdonio | Sosa Santana, Gabriel Anthony<br>
+            <strong>Asesor:</strong> Mg. Guillen Cabrera, Jaime Jesus | Escuela Profesional de Ingeniería Civil
+          </div>
+          <div class="institution-info" style="text-align: right;">
+            <!-- Shield SVG for title slide -->
+            <svg viewBox="0 0 50 60" width="45" height="50" style="display: block; margin-left: auto; margin-bottom: 4px;">
+              <path d="M5 5 h40 v40 c0 15 -20 20 -20 20 c0 0 -20 -5 -20 -20 Z" fill="#0c3c60" />
+              <path d="M25 5 h20 v40 c0 15 -20 20 -20 20 Z" fill="#d12e2e" />
+              <text x="9" y="32" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">U</text>
+              <text x="18" y="42" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">C</text>
+              <text x="27" y="32" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">V</text>
+            </svg>
+            <div style="font-family: var(--font-header); font-weight: 800; font-size: 1.1rem; color: var(--accent);">UCV</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: Qué Veremos Hoy (Agenda) -->
+      <div class="slide" id="slide-2">
+        <div class="decor-top-semicircle"></div>
+        <h2 class="slide-title">Qué Veremos Hoy</h2>
+        <div class="agenda-grid">
+          <div class="agenda-item">
+            <div class="agenda-num">01</div>
+            <div class="agenda-text">Introducción y Realidad Vial</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">02</div>
+            <div class="agenda-text">Problema y Objetivos del Estudio</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">03</div>
+            <div class="agenda-text">Bases Teóricas de SST</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">04</div>
+            <div class="agenda-text">Metodología: Diseño y Categorías</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">05</div>
+            <div class="agenda-text">Metodología: Muestra y Criterios</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">06</div>
+            <div class="agenda-text">Resultados: Riesgos de Obra (OE1)</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">07</div>
+            <div class="agenda-text">Resultados: Liderazgo y Mente (OE2)</div>
+          </div>
+          <div class="agenda-item" style="border-left-color: var(--text-light)">
+            <div class="agenda-num" style="color: var(--text-light)">08</div>
+            <div class="agenda-text">Conclusiones y Recomendaciones</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Realidad Problemática -->
+      <div class="slide" id="slide-3">
+        <h2 class="slide-title">Realidad Problemática</h2>
+        <div class="two-cols">
+          <div class="col-content">
+            <div class="card-detail">
+              <h3>Entorno Constructivo Hostil</h3>
+              <p>Las obras de pistas y veredas representan un sector de alto riesgo por la presencia constante de maquinaria pesada, ruido excesivo de motores y la exposición a radiación solar intensa que desgasta al operario.</p>
+            </div>
+            <div class="card-detail">
+              <h3>La Brecha Operativa en Perú</h3>
+              <p>Existe una discrepancia profunda entre lo planteado en los documentos formales de seguridad (como los planes exigidos por la Ley 29783) y el comportamiento preventivo real de los obreros en las calles, comúnmente motivado por el apuro y la falta de control.</p>
+            </div>
+          </div>
+          <div class="slide-media-container">
+            <!-- Actual generated photo of worker under the sun -->
+            <img class="slide-media-img" src="construction_worker_sun.png" alt="Obrero vial bajo la radiación solar">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: Problema y Objetivos -->
+      <div class="slide" id="slide-4">
+        <h2 class="slide-title">Problema de Investigación y Objetivos</h2>
+        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+          <strong>Pregunta General:</strong> ¿De qué manera está impactando la gestión de SST sobre el nivel de riesgo en proyectos viales según la literatura científica reciente?
+        </p>
+        <div class="problems-grid">
+          <div class="problem-box">
+            <div class="problem-num">PROBLEMA ESPECÍFICO 1</div>
+            <div class="problem-desc">¿Qué riesgos físicos, ergonómicos y psicosociales son los que más se reportan al ejecutar estas obras viales?</div>
+            <div class="objective-pill">OBJETIVO: Identificar los riesgos ocupacionales físicos y ergonómicos de mayor frecuencia.</div>
+          </div>
+          <div class="problem-box">
+            <div class="problem-num">PROBLEMA ESPECÍFICO 2</div>
+            <div class="problem-desc">¿Cómo influyen el liderazgo del capataz y el estrés del obrero en el comportamiento preventivo?</div>
+            <div class="objective-pill">OBJETIVO: Entender la influencia del estilo de liderazgo y salud mental del operario.</div>
+          </div>
+          <div class="problem-box">
+            <div class="problem-num">PROBLEMA ESPECÍFICO 3</div>
+            <div class="problem-desc">¿Cuáles son las barreras que hacen que las prácticas de seguridad fallen en países en desarrollo?</div>
+            <div class="objective-pill">OBJETIVO: Detallar las limitaciones regulatorias y económicas regionales en SST.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: Justificación del Estudio -->
+      <div class="slide" id="slide-5">
+        <h2 class="slide-title">Justificación del Estudio</h2>
+        <div class="justif-grid">
+          <div class="justif-card">
+            <div class="justif-icon">01</div>
+            <h3>Social</h3>
+            <p>La estabilidad de las familias de los obreros depende directamente de su integridad física en campo. Lograr un sistema de gestión robusto garantiza el retorno seguro de los operarios.</p>
+          </div>
+          <div class="justif-card">
+            <div class="justif-icon">02</div>
+            <h3>Práctica / Técnica</h3>
+            <p>Aporta a las constructoras un marco de referencia científico de lo que funciona y lo que falla, disminuyendo fallas operativas y paralización de tramos por accidentes graves.</p>
+          </div>
+          <div class="justif-card">
+            <div class="justif-icon">03</div>
+            <h3>Metodológica</h3>
+            <p>Brinda un análisis crítico sobre la discrepancia sistémica de la Ley 29783 en el pavimento real, sirviendo como guía de auditoría para futuras obras de pavimentación vial.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: Liderazgo y Salud Mental -->
+      <div class="slide" id="slide-6">
+        <h2 class="slide-title">Liderazgo y Salud Mental</h2>
+        <div class="theory-row">
+          <div class="theory-card highlighted">
+            <h3>Liderazgo Transformacional</h3>
+            <p>El capataz que promueve la comunicación horizontal modula de forma positiva la conciencia segura de los obreros. Por contra, el liderazgo transaccional o netamente punitivo fomenta el miedo y genera el ocultamiento sistemático de incidentes.</p>
+            <div class="theory-author">Sankar & Anandh (2024) | Samuelsson et al. (2026)</div>
+          </div>
+          <div class="theory-card">
+            <h3>Estrés Laboral y Desgaste</h3>
+            <p>La presión del cronograma y la supervisión agresiva desencadenan fatiga emocional y agotamiento mental, lo que bloquea la concentración del obrero e induce errores operativos graves.</p>
+            <div class="theory-author">Zhang et al. (2023) | Wang et al. (2023)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 7: Ergonomía y Fatiga Física -->
+      <div class="slide" id="slide-7">
+        <h2 class="slide-title">Ergonomía y Fatiga Física</h2>
+        <div class="theory-row">
+          <div class="theory-card">
+            <h3>Fatiga Fisiológica (VFC)</h3>
+            <p>La fatiga del obrero se asocia directamente a errores manuales. Se puede medir y clasificar objetivamente mediante técnicas de variabilidad de la frecuencia cardíaca, lo que evidencia el desgaste muscular real en campo.</p>
+            <div class="theory-author">Arias et al. (2023) | Fang et al. (2023)</div>
+          </div>
+          <div class="theory-card highlighted">
+            <h3>Trastornos Musculoesqueléticos</h3>
+            <p>Las posturas forzadas y la manipulación manual incorrecta de materiales pesados (cemento, adoquines) son los principales determinantes de dolencias de la columna lumbar en obreros viales.</p>
+            <div class="theory-author">Seo & Lee (2026) | Riana et al. (2024)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 8: Metodología: Diseño y Categorías -->
+      <div class="slide" id="slide-8">
+        <h2 class="slide-title">Metodología: Diseño y Categorías</h2>
+        <div class="two-cols">
+          <div class="col-content">
+            <div class="card-detail">
+              <h3>Enfoque y Diseño</h3>
+              <p>Investigación de **tipo básica**, con enfoque **cualitativo-documental** y diseño descriptivo no experimental. Se estructuró como una **Revisión Sistemática de la Literatura (RSL)** rigurosa, siguiendo los principios de la declaración **PRISMA**.</p>
+            </div>
+            <div class="card-detail">
+              <h3>Categorías de Estudio</h3>
+              <p><strong>1. Nivel de Riesgo Laboral:</strong> Evaluado mediante subcategorías de factores físicos (ruido, caídas), ergonómicos (cargas, posturas) y psicosociales (estrés, fatiga mental).<br>
+              <strong>2. Gestión de SST:</strong> Evaluada mediante el liderazgo preventivo del jefe, capacidades regulatorias del marco legal y cumplimiento real en campo.</p>
+            </div>
+          </div>
+          <div class="slide-media-container">
+            <!-- Actual generated diagram of RSL PRISMA flowchart -->
+            <img class="slide-media-img" src="methodology_prisma_diagram.png" alt="Diagrama de flujo RSL PRISMA">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 9: Metodología: Muestra y Criterios -->
+      <div class="slide" id="slide-9">
+        <h2 class="slide-title">Metodología: Muestra y Criterios</h2>
+        <div class="two-cols">
+          <div class="col-content">
+            <div class="card-detail">
+              <h3>Criterios de Inclusión y Exclusión</h3>
+              <p>
+                <strong>Inclusión:</strong> Artículos científicos de revistas indexadas en Scopus y Web of Science (Q1/Q2) publicados entre **2022 y 2026** enfocados en construcción vial, liderazgo, estrés y prevención tecnológica.<br><br>
+                <strong>Exclusión:</strong> Tesis universitarias, artículos de opinión, conferencias no indexadas y estudios no relacionados a obras civiles públicas.
+              </p>
+            </div>
+            <div class="card-detail">
+              <h3>Técnicas e Instrumentos</h3>
+              <p>
+                **Técnica:** Fichaje y revisión sistemática de bases de datos académicas.<br>
+                **Instrumento:** Matriz de síntesis y extracción en Excel, parametrizando: autor, año, metodología, objetivos y hallazgos vinculados a SST.<br>
+                **Análisis:** Análisis de contenido temático agrupando tendencias y brechas.
+              </p>
+            </div>
+          </div>
+          <div class="slide-media-container">
+            <!-- Live interactive grid mockup of the extraction Excel matrix -->
+            <div style="background-color: #0c0f11; border: 4px solid var(--accent); border-radius: 18px; padding: 1.8rem; height: 100%; width:100%; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow);">
+              <h4 style="font-family: var(--font-header); font-size: 1.15rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase;">Estructura de la Matriz de Extracción (Excel)</h4>
+              <div style="font-size: 0.9rem; border: 1px solid #222b30; border-radius: 8px; overflow: hidden; background-color: #121517;">
+                <div style="display: grid; grid-template-columns: 0.7fr 1fr 1.5fr; background-color: #1a1e21; font-weight: bold; border-bottom: 2px solid #222b30; color: var(--accent); padding: 10px;">
+                  <span>Columna</span><span>Variable</span><span>Ejemplo Registrado</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 0.7fr 1fr 1.5fr; border-bottom: 1px solid #222b30; padding: 10px;">
+                  <span>A</span><span>Autor y Año</span><span>Liu et al. (2026)</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 0.7fr 1fr 1.5fr; border-bottom: 1px solid #222b30; padding: 10px;">
+                  <span>B</span><span>País / Cuartil</span><span>China / Q1</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 0.7fr 1fr 1.5fr; border-bottom: 1px solid #222b30; padding: 10px;">
+                  <span>C</span><span>Categoría</span><span>Riesgo Laboral (Físico)</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 0.7fr 1fr 1.5fr; padding: 10px;">
+                  <span>D</span><span>Hallazgo SST</span><span>Supervisión deficiente aumenta...</span>
+                </div>
+              </div>
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; margin-top: 1rem;">
+                *Instrumento de sistematización:* Matriz digital estructurada para consolidar la información clave de los 17 artículos Scopus/WoS seleccionados.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 10: Resultados: Riesgos Sistémicos -->
+      <div class="slide" id="slide-10">
+        <h2 class="slide-title">Resultados: Riesgos Sistémicos</h2>
+        <div class="results-grid">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Riesgo Sistémico Detectado</th>
+                  <th>Impacto</th>
+                  <th>Consecuencia Operativa</th>
+                  <th>Referencia / Cita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Falta de capacitación técnica</td>
+                  <td><span class="badge-impact high">alto</span></td>
+                  <td>Incremento de accidentes laborales</td>
+                  <td><span class="citation-tag">Liu et al. (2026)</span></td>
+                </tr>
+                <tr>
+                  <td>Supervisión deficiente en campo</td>
+                  <td><span class="badge-impact high">alto</span></td>
+                  <td>Aparición de riesgos operativos graves</td>
+                  <td><span class="citation-tag">Liu et al. (2026)</span></td>
+                </tr>
+                <tr>
+                  <td>Mala comunicación interna</td>
+                  <td><span class="badge-impact medium">medio</span></td>
+                  <td>Errores críticos de coordinación en obra</td>
+                  <td><span class="citation-tag">Liu et al. (2026)</span></td>
+                </tr>
+                <tr>
+                  <td>Presión de cronograma/avance</td>
+                  <td><span class="badge-impact high">alto</span></td>
+                  <td>Conductas inseguras y omisión de EPP</td>
+                  <td><span class="citation-tag">Liu et al. (2026)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-content" style="gap: 1.2rem">
+            <div class="card-detail" style="padding: 1.5rem">
+              <h3>Percepción de Riesgo</h3>
+              <p style="font-size: 0.95rem; margin-bottom: 0.8rem">
+                **Castro Mejía et al. (2023)** reportan la percepción de riesgos en obra:
+              </p>
+              <div style="font-size: 1rem; display: flex; flex-direction: column; gap: 0.6rem">
+                <div style="display:flex; justify-content:space-between">
+                  <span>Riesgo Alto</span><strong>35%</strong>
+                </div>
+                <div style="width:100%; height:8px; background:#222b30; border-radius:4px">
+                  <div style="width:35%; height:100%; background:var(--accent)"></div>
+                </div>
+                <div style="display:flex; justify-content:space-between">
+                  <span>Riesgo Moderado</span><strong>31%</strong>
+                </div>
+                <div style="width:100%; height:8px; background:#222b30; border-radius:4px">
+                  <div style="width:31%; height:100%; background:var(--accent)"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Live SVG Donut Chart representing Risk Perception -->
+            <div class="slide-media-container" style="min-height: 180px;">
+              <div style="background-color: #0c0f11; border: 2px solid var(--accent); border-radius: 12px; padding: 1rem; height: 100%; width: 100%; display: flex; align-items: center; justify-content: space-around; box-shadow: var(--shadow);">
+                <svg width="100" height="100" viewBox="0 0 36 36" style="transform: rotate(-90deg);">
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#222b30" stroke-width="3"></circle>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="var(--accent)" stroke-width="4.2" stroke-dasharray="35 65" stroke-dashoffset="0"></circle>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#ffb13b" stroke-width="4.2" stroke-dasharray="31 69" stroke-dashoffset="-35"></circle>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#4a5568" stroke-width="4.2" stroke-dasharray="34 66" stroke-dashoffset="-66"></circle>
+                </svg>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem;">
+                  <div style="display:flex; align-items:center; gap:5px;"><span style="display:inline-block; width:10px; height:10px; background:var(--accent); border-radius:50%"></span> Alto (35%)</div>
+                  <div style="display:flex; align-items:center; gap:5px;"><span style="display:inline-block; width:10px; height:10px; background:#ffb13b; border-radius:50%"></span> Mod. (31%)</div>
+                  <div style="display:flex; align-items:center; gap:5px;"><span style="display:inline-block; width:10px; height:10px; background:#4a5568; border-radius:50%"></span> Leve (34%)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 11: Resultados: Fatiga y Riesgos Físicos (OE1) -->
+      <div class="slide" id="slide-11">
+        <h2 class="slide-title">Resultados: Fatiga y Riesgos Físicos (OE1)</h2>
+        <div class="results-grid">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo de Fatiga</th>
+                  <th>Conducta Insegura Asociada</th>
+                  <th>Impacto Fisiológico</th>
+                  <th>Referencia / Cita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fatiga Física</strong></td>
+                  <td>Errores en operaciones y manipulación manual</td>
+                  <td>Cardiovascular/Muscular (VFC)</td>
+                  <td><span class="citation-tag">Fang et al. (2023)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Fatiga Mental</strong></td>
+                  <td>Distracción constante y olvido de EPP</td>
+                  <td>Agotamiento mental por presión</td>
+                  <td><span class="citation-tag">Arias et al. (2023)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Fatiga Mixta</strong></td>
+                  <td>Incidentes y accidentes graves en el pavimento</td>
+                  <td>Alta propensión al error humano</td>
+                  <td><span class="citation-tag">Fang et al. (2023)</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="padding: 14px 20px; border-top: 1px solid var(--border-color); font-size: 0.95rem; line-height: 1.5;">
+              <strong>Riesgos físicos directos reportados:</strong> Caídas [Alto], Ruido nocivo de motores [Alto], Golpes [Medio] y Fatiga laboral acumulada [Alto] <span class="citation-tag">Castro Mejía et al. (2023)</span>.
+            </div>
+          </div>
+          
+          <!-- Live SVG ECG/HRV fatigue tracking graph -->
+          <div class="slide-media-container">
+            <div style="background-color: #0c0f11; border: 4px solid var(--accent); border-radius: 18px; padding: 1.8rem; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-shadow: var(--shadow);">
+              <h4 style="font-family: var(--font-header); font-size: 1.15rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase;">Medición de Fatiga (VFC)</h4>
+              <svg width="200" height="120" viewBox="0 0 120 80">
+                <line x1="10" y1="40" x2="110" y2="40" stroke="#222b30" stroke-width="0.5" />
+                <path d="M 10 40 L 30 40 L 35 30 L 40 50 L 45 10 L 50 70 L 55 40 L 75 40 L 80 20 L 85 60 L 90 40 L 110 40" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div style="font-size: 0.95rem; color: var(--text-muted); text-align: center; line-height: 1.5; margin-top: 1rem;">
+                *Detección de sobreesfuerzo:* Variabilidad reducida en el EKG detecta picos de fatiga fisiológica antes de que ocurran actos inseguros en el pavimento.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 12: Resultados: Riesgos Ergonómicos (OE1) -->
+      <div class="slide" id="slide-12">
+        <h2 class="slide-title">Resultados: Riesgos Ergonómicos (OE1)</h2>
+        <div class="results-grid">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Riesgo Ergonómico en Pavimentación</th>
+                  <th>Lesión o Trastorno Frecuente</th>
+                  <th>Severidad</th>
+                  <th>Referencia / Cita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Posturas forzadas / inclinaciones</strong></td>
+                  <td>Dolor lumbar y deformaciones en columna</td>
+                  <td>Alto / Ocupacional</td>
+                  <td><span class="citation-tag">Seo & Lee (2026)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Manipulación manual de cargas</strong></td>
+                  <td>Lesiones musculares, desgarros y esguinces</td>
+                  <td>Moderado / Agudo</td>
+                  <td><span class="citation-tag">Riana et al. (2024)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Movimientos repetitivos (paleteo)</strong></td>
+                  <td>Fatiga muscular generalizada y tendinitis</td>
+                  <td>Medio / Crónico</td>
+                  <td><span class="citation-tag">Seo & Lee (2026)</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="padding: 14px 20px; border-top: 1px solid var(--border-color); font-size: 0.95rem; line-height: 1.5;">
+              <strong>Determinantes de DME:</strong> Las tareas repetitivas incómodas y el sobreesfuerzo físico son los determinantes ocupacionales de trastornos musculoesqueléticos más comunes en obras viales.
+            </div>
+          </div>
+          <div class="slide-media-container">
+            <!-- Actual generated photo of ergonomics paving work -->
+            <img class="slide-media-img" src="ergonomia_paving.png" alt="Obrero cargando adoquines con postura forzada">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 13: Resultados: Liderazgo y Clima SST (OE2) -->
+      <div class="slide" id="slide-13">
+        <h2 class="slide-title">Resultados: Liderazgo y Clima SST (OE2)</h2>
+        <div class="results-grid">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo de Liderazgo del Capataz</th>
+                  <th>Resultado en Comportamiento Seguro</th>
+                  <th>Referencia / Cita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Liderazgo Transformacional</strong></td>
+                  <td>Mayor prevención, reporte de riesgos y cumplimiento de SST</td>
+                  <td><span class="citation-tag">Sankar & Anandh (2024)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Liderazgo Transaccional</strong></td>
+                  <td>Cumplimiento parcial (solo por incentivos o recompensas)</td>
+                  <td><span class="citation-tag">Sankar & Anandh (2024)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Liderazgo Punitivo / Autoritario</strong></td>
+                  <td>Ocultamiento sistemático de errores y accidentes menores</td>
+                  <td><span class="citation-tag">Samuelsson et al. (2026)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Liderazgo Pasivo / Laissez-faire</strong></td>
+                  <td>Baja supervisión e incremento grave de la accidentabilidad</td>
+                  <td><span class="citation-tag">Sari et al. (2023)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="slide-media-container">
+            <!-- Actual generated photo of foreman safety briefing -->
+            <img class="slide-media-img" src="foreman_safety_briefing.png" alt="Ingeniero capataz dirigiendo charla de seguridad">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 14: Resultados: Salud Mental y Resiliencia (OE2) -->
+      <div class="slide" id="slide-14">
+        <h2 class="slide-title">Resultados: Salud Mental y Resiliencia (OE2)</h2>
+        <div class="results-grid">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Estresor Laboral en Construcción</th>
+                  <th>Impacto Emocional y Psicológico</th>
+                  <th>Consecuencia de Seguridad</th>
+                  <th>Referencia / Cita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Presión extrema de tiempo</td>
+                  <td>Estrés elevado, fatiga mental y sobrecarga</td>
+                  <td>Descuidos por apuro</td>
+                  <td><span class="citation-tag">Zhang et al. (2023)</span></td>
+                </tr>
+                <tr>
+                  <td>Supervisión abusiva o autoritaria</td>
+                  <td>Ansiedad laboral y distracción cognitiva</td>
+                  <td>Conductas inseguras</td>
+                  <td><span class="citation-tag">Wang et al. (2023)</span></td>
+                </tr>
+                <tr>
+                  <td>Jornadas laborales extensas</td>
+                  <td>Depresión ocupacional y fatiga mental</td>
+                  <td>Disminución de reflejos</td>
+                  <td><span class="citation-tag">Zhang et al. (2023)</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="padding: 14px 20px; border-top: 1px solid var(--border-color); font-size: 0.95rem; line-height: 1.5;">
+              **La Resiliencia Psicológica** actúa como modulador: un nivel alto reduce la depresión y ansiedad laboral en obra vial frente a las dificultades cotidianas de campo <span class="citation-tag">Zhang et al. (2026)</span>.
+            </div>
+          </div>
+          
+          <!-- Live interactive flowchart explaining the mental error mechanism -->
+          <div class="slide-media-container">
+            <div style="background-color: #0c0f11; border: 4px solid var(--accent); border-radius: 18px; padding: 2rem 1.8rem; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow);">
+              <h4 style="font-family: var(--font-header); font-size: 1.15rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; text-align: center;">Mecanismo de Error Mental en Obra</h4>
+              <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem;">
+                <div style="background-color: #1c1f22; border-left: 5px solid #ff5252; padding: 8px 12px; border-radius: 6px;">
+                  <strong>1. Presión y Supervisión Abusiva</strong>
+                </div>
+                <div style="text-align: center; color: var(--accent); line-height: 1; font-weight:bold; font-size:1.2rem;">&#8595;</div>
+                <div style="background-color: #1c1f22; border-left: 5px solid #ffb13b; padding: 8px 12px; border-radius: 6px;">
+                  <strong>2. Estrés y Fatiga Cognitiva</strong>
+                </div>
+                <div style="text-align: center; color: var(--accent); line-height: 1; font-weight:bold; font-size:1.2rem;">&#8595;</div>
+                <div style="background-color: #1c1f22; border-left: 5px solid var(--accent); padding: 8px 12px; border-radius: 6px;">
+                  <strong>3. Conducta Insegura y Descuido</strong>
+                </div>
+              </div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); text-align: center; line-height: 1.5; margin-top: 0.8rem;">
+                *Amortiguador:* La resiliencia actúa reduciendo el paso de (2) a (3) <span style="color:var(--accent); font-weight:600;">(Zhang et al., 2026)</span>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 15: Resultados: Barreras Organizacionales (OE3) -->
+      <div class="slide" id="slide-15">
+        <h2 class="slide-title">Resultados: Barreras Organizacionales (OE3)</h2>
+        <div class="results-grid">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Barrera Organizacional Detectada</th>
+                  <th>Efecto Perjudicial en Obra Vial</th>
+                  <th>Referencia / Cita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Presupuesto de seguridad insuficiente</strong></td>
+                  <td>Falta de EPP homologados y recorte de capacitaciones</td>
+                  <td><span class="citation-tag">Irfan et al. (2026)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Leyes e inspección débiles en campo</strong></td>
+                  <td>Bajo control preventivo, nulo cumplimiento de la ley</td>
+                  <td><span class="citation-tag">Hussain et al. (2026)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Presión laboral / avances rápidos</strong></td>
+                  <td>Fomento de conductas inseguras e infracciones deliberadas</td>
+                  <td><span class="citation-tag">Afuye et al. (2024)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Falta de coordinación sistémica</strong></td>
+                  <td>Errores operativos graves en la secuencia de obra</td>
+                  <td><span class="citation-tag">Liu et al. (2026)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Live warning/barrier graphic -->
+          <div class="slide-media-container">
+            <div style="background-color: #0c0f11; border: 4px solid var(--accent); border-radius: 18px; padding: 2rem 1.8rem; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-shadow: var(--shadow);">
+              <h4 style="font-family: var(--font-header); font-size: 1.15rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase;">Barreras Críticas en SST</h4>
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 22h20L12 2z" />
+                <line x1="12" y1="9" x2="12" y2="13" stroke="#ff5252" stroke-width="2.5" />
+                <line x1="12" y1="17" x2="12.01" y2="17" stroke="#ff5252" stroke-width="3.5" />
+              </svg>
+              <div style="font-size: 0.95rem; color: var(--text-muted); text-align: center; line-height: 1.5; margin-top: 1rem;">
+                *Trabas Principales:* Presupuesto de seguridad recortado, inspección estatal débil y alta presión de producción.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 16: Conclusiones (Sólido Turquesa) -->
+      <div class="slide slide-conclusions" id="slide-16">
+        <div class="decor-accent-semicircle" style="background-color: #000; opacity: 0.1"></div>
+        <h2 class="slide-title">Conclusiones</h2>
+        <div class="concl-list">
+          <div class="concl-item">
+            <div class="concl-num">01</div>
+            <div class="concl-body">
+              <h3>Fatiga y Errores en Obra</h3>
+              <p>El cansancio físico originado por las posturas forzadas y el sobreesfuerzo de carga se acopla con la fatiga mental por estrés térmico y ruido ambiental. Esto propicia actos inseguros recurrentes en la pavimentación vial.</p>
+            </div>
+          </div>
+          <div class="concl-item">
+            <div class="concl-num">02</div>
+            <div class="concl-body">
+              <h3>Liderazgo Transformacional</h3>
+              <p>El estilo transformacional del capataz ejerce un impacto preventivo crítico sobre las conductas seguras. Promover la confianza en lugar del castigo mejora el clima de seguridad y reduce los incidentes ocultos.</p>
+            </div>
+          </div>
+          <div class="concl-item">
+            <div class="concl-num">03</div>
+            <div class="concl-body">
+              <h3>Barreras en Economías Locales</h3>
+              <p>La prevención real en campo se ve mermada por limitaciones presupuestarias de las constructoras y una nula fiscalización periódica estatal, limitando la Ley 29783 a un mero cumplimiento burocrático en oficina.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 17: Recomendaciones -->
+      <div class="slide" id="slide-17">
+        <h2 class="slide-title">Recomendaciones</h2>
+        <div class="recom-grid">
+          <div class="recom-card">
+            <div class="recom-num">01</div>
+            <h3>Ergonomía Activa</h3>
+            <p>Implementar pausas activas obligatorias y rotación de puestos en tareas de pavimentación manual para mitigar lesiones musculoesqueléticas de columna lumbar y reducir la fatiga cardiovascular acumulada.</p>
+          </div>
+          <div class="recom-card">
+            <div class="recom-num">02</div>
+            <h3>Liderazgo Preventivo</h3>
+            <p>Capacitar a residentes, ingenieros y capataces en habilidades transformacionales, promoviendo una cultura de reporte activo libre de castigos y gestionando el estrés para evitar descuidos por apuro.</p>
+          </div>
+          <div class="recom-card">
+            <div class="recom-num">03</div>
+            <h3>Presupuesto Blindado</h3>
+            <p>Blindar una partida presupuestaria fija y exclusiva para seguridad laboral desde las bases de licitación, impidiendo recortes en prevención para priorizar el cronograma físico de producción.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 18: Muchas Gracias -->
+      <div class="slide slide-cover" id="slide-18" style="background: radial-gradient(circle at 20% 80%, #12181b 0%, var(--bg-dark) 100%)">
+        <div class="decor-accent-semicircle"></div>
+        <div class="cover-header" style="display: flex; justify-content: space-between; width: 100%;">
+          <div class="cover-badge" style="background-color: var(--accent); color: var(--text-dark); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-family: var(--font-header); font-size: 0.85rem; text-transform: uppercase;">Fin de la Presentación</div>
+          <div class="cover-badge" style="border: 1px solid var(--border-color); color: var(--text-light); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-family: var(--font-header); font-size: 0.85rem; text-transform: uppercase;">Universidad César Vallejo</div>
+        </div>
+        <div class="cover-body" style="text-align: center; max-width: 100%; margin-top: 4rem;">
+          <h1 class="cover-title" style="font-size: 6rem; text-transform: none; margin-bottom: 2rem;">¡Muchas Gracias!</h1>
+          <p style="font-size: 1.8rem; color: var(--accent); font-family: var(--font-header); font-weight: 600;">¿Preguntas o comentarios?</p>
+        </div>
+        <div class="cover-footer" style="justify-content: center; text-align: center; border: none; padding-top: 0;">
+          <p style="font-size: 1.05rem; color: var(--text-muted)">
+            Gestión de Seguridad y Salud Ocupacional y Nivel de Riesgo Laboral en Obras Viales: Revisión Sistemática
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PRESENTATION FOOTER CONTROLS -->
+    <div class="presentation-footer">
+      <div class="presentation-title-footer">
+        Gestión de SST y Riesgo Laboral en Obras Viales - UCV 2026
+      </div>
+      <div class="controls">
+        <button class="btn-control" id="btn-prev" title="Anterior (Flecha izquierda)">&#8592;</button>
+        <div class="slide-indicator">
+          Diapositiva <span id="current-slide-num">1</span> de <span id="total-slides-num">18</span>
+        </div>
+        <button class="btn-control" id="btn-next" title="Siguiente (Flecha derecha / Espacio)">&#8594;</button>
+        <!-- Fullscreen Button -->
+        <button class="btn-control" id="btn-fullscreen" title="Pantalla completa (F)" style="margin-left: 10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress"></div>
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION LOGIC (JS) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const btnPrev = document.getElementById('btn-prev');
+      const btnNext = document.getElementById('btn-next');
+      const btnFullscreen = document.getElementById('btn-fullscreen');
+      const currentIndicator = document.getElementById('current-slide-num');
+      const totalIndicator = document.getElementById('total-slides-num');
+      const progressBar = document.getElementById('progress');
+      const header = document.querySelector('.presentation-header');
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      // Initialize indicators
+      totalIndicator.textContent = totalSlides;
+
+      function updateSlide(index) {
+        if (index < 0 || index >= totalSlides) return;
+
+        const prevSlide = slides[currentSlide];
+        prevSlide.classList.remove('active');
+        prevSlide.classList.add('exit');
+        
+        setTimeout(() => {
+          prevSlide.classList.remove('exit');
+        }, 500);
+
+        currentSlide = index;
+
+        const targetSlide = slides[currentSlide];
+        targetSlide.classList.add('active');
+
+        currentIndicator.textContent = currentSlide + 1;
+
+        const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+
+        // Academic Header toggle: hide on Slide 1 (Cover) and Slide 18 (Thank You)
+        if (currentSlide === 0 || currentSlide === totalSlides - 1) {
+          header.style.display = 'none';
+        } else {
+          header.style.display = 'flex';
+        }
+      }
+
+      function abrirPantallaCompleta() {
+        // Si el fallback de pantalla completa (simulado) está activo, lo desactivamos primero
+        if (document.body.classList.contains('mock-fullscreen-active')) {
+          document.body.classList.remove('mock-fullscreen-active');
+          actualizarIconoFullscreen(false);
+          return;
+        }
+
+        // Si no, intentamos el Fullscreen nativo del navegador
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen()
+            .then(() => {
+              actualizarIconoFullscreen(true);
+            })
+            .catch(err => {
+              console.warn("Fullscreen nativo bloqueado por el iframe (ej. Canva). Activando modo maximizado simulado.");
+              document.body.classList.add('mock-fullscreen-active');
+              actualizarIconoFullscreen(true);
+            });
+        } else {
+          document.exitFullscreen()
+            .then(() => {
+              actualizarIconoFullscreen(false);
+            });
+        }
+      }
+
+      function actualizarIconoFullscreen(isFS) {
+        const btn = document.getElementById('btn-fullscreen');
+        if (isFS) {
+          btn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 14h6v6m10-6h-6v6M4 10h6V4m10 6h-6V4" />
+            </svg>
+          `;
+        } else {
+          btn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+            </svg>
+          `;
+        }
+      }
+
+      // Escuchar cambios de fullscreen nativos (por ejemplo si el usuario sale con la tecla Escape)
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+          document.body.classList.remove('mock-fullscreen-active');
+          actualizarIconoFullscreen(false);
+        } else {
+          actualizarIconoFullscreen(true);
+        }
+      });
+
+      btnPrev.addEventListener('click', () => {
+        if (currentSlide > 0) {
+          updateSlide(currentSlide - 1);
+        }
+      });
+
+      btnNext.addEventListener('click', () => {
+        if (currentSlide < totalSlides - 1) {
+          updateSlide(currentSlide + 1);
+        }
+      });
+
+      btnFullscreen.addEventListener('click', abrirPantallaCompleta);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+          if (currentSlide < totalSlides - 1) {
+            e.preventDefault();
+            updateSlide(currentSlide + 1);
+          }
+        } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+          if (currentSlide > 0) {
+            e.preventDefault();
+            updateSlide(currentSlide - 1);
+          }
+        } else if (e.key.toLowerCase() === 'f') {
+          e.preventDefault();
+          abrirPantallaCompleta();
+        }
+      });
+
+      // Initial progress bar percentage
+      progressBar.style.width = `${(1 / totalSlides) * 100}%`;
+    });
+  </script>
+</body>
+</html>

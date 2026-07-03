@@ -1,0 +1,14 @@
+# OS generated files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+~$*.docx
+
+# Text extractions (optional to ignore)
+# extracted_text.txt
