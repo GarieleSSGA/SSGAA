@@ -16,7 +16,7 @@ Este repositorio contiene la presentación interactiva en formato web (HTML5, CS
 El repositorio está organizado con la siguiente estructura de archivos autocontenidos:
 
 ```bash
-├── presentacion_informe.html  # Código principal de la presentación interactiva
+├── index.html                 # Código principal de la presentación interactiva (Landing Page)
 ├── README.md                  # Documentación del repositorio (este archivo)
 ├── .gitignore                 # Configuración para omitir archivos temporales de Git
 └── [Imágenes Ilustrativas]
@@ -40,7 +40,7 @@ Debido a las políticas de seguridad de los navegadores web modernos (CORS/acces
    ```bash
    python -m http.server 8080 --bind 127.0.0.1
    ```
-3. Abre tu navegador e ingresa a: **`http://localhost:8080/presentacion_informe.html`**
+3. Abre tu navegador e ingresa a: **`http://localhost:8080/index.html`**
 
 **Con Node.js (npx):**
 1. Ejecuta en tu terminal:
@@ -50,7 +50,7 @@ Debido a las políticas de seguridad de los navegadores web modernos (CORS/acces
 2. Abre la URL que te indique la terminal (por defecto `http://localhost:3000`).
 
 ### Opción 2: Doble Clic directo
-Puedes abrir el archivo `presentacion_informe.html` directamente haciendo doble clic desde el explorador de archivos en tu navegador favorito, aunque algunas configuraciones estrictas de seguridad de Chromium podrían limitar la carga de ciertos elementos si no se sirve desde un dominio local (`http://localhost`).
+Puedes abrir el archivo `index.html` directamente haciendo doble clic desde el explorador de archivos en tu navegador favorito, aunque algunas configuraciones estrictas de seguridad de Chromium podrían limitar la carga de ciertos elementos si no se sirve desde un dominio local (`http://localhost`).
 
 ---
 
