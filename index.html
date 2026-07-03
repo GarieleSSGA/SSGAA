@@ -114,8 +114,8 @@
        ACADEMIC HEADER (UCV LOGO)
        ========================================== */
     .presentation-header {
-      height: 75px;
-      padding: 0 60px;
+      height: clamp(55px, 6.5vh, 70px);
+      padding: 0 clamp(20px, 4vw, 60px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -131,11 +131,11 @@
 
     .header-academic-track {
       font-family: var(--font-header);
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: clamp(0.75rem, 1.2vh, 0.85rem);
+      color: var(--text-light); /* High contrast readable white */
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* ==========================================
@@ -159,11 +159,12 @@
       pointer-events: none;
       transform: translateX(50px);
       transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility 0s linear var(--transition-speed);
-      padding: 40px 60px;
+      padding: clamp(20px, 3.5vh, 35px) clamp(30px, 5vw, 60px); /* Responsive padding to prevent top/bottom cutoff */
       display: flex;
       flex-direction: column;
       justify-content: center;
       z-index: 5;
+      box-sizing: border-box;
     }
 
     .slide.active {
@@ -193,8 +194,8 @@
     }
 
     .slide-title {
-      font-size: 3.5rem;
-      margin-bottom: 2rem;
+      font-size: clamp(1.8rem, 4.2vh, 2.5rem); /* Scaled down from 3.5rem for screen compatibility */
+      margin-bottom: clamp(1rem, 2.5vh, 1.6rem);
       color: var(--text-light);
       position: relative;
       display: inline-block;
@@ -590,9 +591,9 @@
     }
 
     .cover-title {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 4.8vh, 3rem); /* Scaled down from 3.5rem for mobile and screen compatibility */
       line-height: 1.2;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       color: var(--text-light);
       font-weight: 800;
     }
