@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador de Defensa Académica y Balotario de Preguntas - UCV 2026</title>
+  <title>Entrenador de Oratoria y Guion de Exposición - UCV 2026</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,8 @@
       --border: #24324a;
       --card-bg: #1e293b;
       --correct: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
       --font-title: 'Outfit', sans-serif;
       --font-body: 'Inter', sans-serif;
     }
@@ -34,13 +36,15 @@
       --border: #e2e8f0;
       --card-bg: #f1f5f9;
       --correct: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
 
     body {
@@ -55,7 +59,7 @@
     header {
       background-color: var(--bg-secondary);
       border-bottom: 1px solid var(--border);
-      padding: 1.25rem 2rem;
+      padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -78,7 +82,7 @@
 
     .header-title h1 {
       font-family: var(--font-title);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
       background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
       -webkit-background-clip: text;
@@ -116,12 +120,12 @@
 
     /* MAIN CONTAINER */
     .container {
-      max-width: 1300px;
-      margin: 2rem auto;
+      max-width: 1400px;
+      margin: 1.5rem auto;
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2rem;
+      grid-template-columns: 320px 1fr;
+      gap: 1.5rem;
     }
 
     @media (max-width: 968px) {
@@ -133,32 +137,36 @@
     /* SIDEBAR NAVIGATION */
     aside {
       position: sticky;
-      top: 100px;
-      height: fit-content;
+      top: 85px;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      padding-right: 5px;
     }
 
     .nav-card {
       background-color: var(--bg-secondary);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 1.25rem;
+      padding: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .nav-card h2 {
       font-family: var(--font-title);
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
     }
 
     .nav-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
     .nav-item button {
@@ -167,15 +175,15 @@
       border: 1px solid transparent;
       color: var(--text-muted);
       text-align: left;
-      padding: 10px 14px;
-      border-radius: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
       cursor: pointer;
       font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 500;
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .nav-item button:hover {
@@ -189,267 +197,285 @@
       font-weight: 600;
     }
 
+    .nav-item-num {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-item-title {
+      font-size: 0.88rem;
+    }
+
     /* MAIN CONTENT */
     main {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* CARDS */
-    .card {
+    /* EXPOSITION CARD */
+    .expo-card {
       background-color: var(--bg-secondary);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 1.75rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .expo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1rem;
       margin-bottom: 1.5rem;
     }
 
-    .card-title {
+    .expo-step-tag {
       font-family: var(--font-title);
-      font-size: 1.5rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      margin-bottom: 1.25rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.75rem;
       color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* CHEAT SHEET STATS */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .stat-box {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-family: var(--font-title);
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
+    .expo-step-time {
       font-size: 0.85rem;
       color: var(--text-muted);
+      background-color: var(--card-bg);
+      padding: 4px 10px;
+      border-radius: 12px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
 
-    .stat-desc {
-      font-size: 0.8rem;
-      color: var(--text-main);
-      margin-top: 8px;
-    }
-
-    /* Q&A LIST */
-    .qa-category-title {
+    .expo-title {
       font-family: var(--font-title);
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--text-main);
-      margin: 1.5rem 0 1rem 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      margin-bottom: 1.5rem;
     }
 
-    .qa-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .qa-item {
+    /* SUB-CARDS (GUION, VISUAL, etc.) */
+    .sub-section {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
+      margin-bottom: 1.25rem;
       overflow: hidden;
     }
 
-    .qa-question {
+    .sub-header {
       width: 100%;
       background: none;
       border: none;
       color: var(--text-main);
-      padding: 1.25rem;
+      padding: 1rem 1.25rem;
+      font-family: var(--font-title);
+      font-size: 1.1rem;
+      font-weight: 700;
       text-align: left;
-      font-family: var(--font-body);
-      font-size: 1.05rem;
-      font-weight: 600;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
     }
 
-    .qa-question:hover {
-      background-color: rgba(255,255,255,0.02);
-    }
-
-    .qa-question::after {
+    .sub-header::after {
       content: '▼';
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--accent);
-      transition: transform 0.3s ease;
+      transition: transform 0.2s ease;
     }
 
-    .qa-item.open .qa-question::after {
+    .sub-section.open .sub-header::after {
       transform: rotate(180deg);
     }
 
-    .qa-answer {
+    .sub-body {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-      background-color: rgba(0,0,0,0.15);
-      border-top: 1px solid transparent;
+      transition: max-height 0.3s ease-out;
+      background-color: rgba(0,0,0,0.1);
     }
 
-    .qa-item.open .qa-answer {
-      max-height: 1000px;
-      transition: max-height 0.5s ease-in-out;
+    .sub-section.open .sub-body {
+      max-height: 1200px;
+      transition: max-height 0.5s ease-in;
       border-top: 1px solid var(--border);
     }
 
-    .qa-answer-content {
+    .sub-content {
       padding: 1.25rem;
-      font-size: 0.98rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
     }
 
-    .qa-answer-content p {
-      margin-bottom: 0.75rem;
-    }
-
-    .qa-answer-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    .ref-badge {
-      background-color: rgba(0, 210, 196, 0.1);
-      color: var(--accent);
-      border: 1px solid rgba(0, 210, 196, 0.2);
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-top: 5px;
-    }
-
-    /* RANDOM SIMULATOR */
-    .sim-box {
-      background-color: var(--card-bg);
-      border: 1px solid var(--accent);
-      border-radius: 16px;
-      padding: 2.5rem;
-      text-align: center;
-      position: relative;
-      margin-top: 1rem;
-    }
-
-    .sim-jury-role {
-      font-family: var(--font-title);
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 1rem;
-    }
-
-    .sim-question-text {
-      font-family: var(--font-title);
-      font-size: 1.5rem;
-      font-weight: 700;
+    /* SPECIFIC GUION STYLING */
+    .speech-bubble {
+      border-left: 4px solid var(--accent);
+      padding-left: 1.25rem;
+      font-style: italic;
       color: var(--text-main);
-      margin-bottom: 2rem;
-      min-height: 80px;
+      background-color: rgba(0, 210, 196, 0.03);
+      padding: 1rem 1rem 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .visual-layout {
+      border-left: 4px solid #3b82f6;
+      padding-left: 1.25rem;
+      background-color: rgba(59, 130, 246, 0.03);
+      padding: 1rem 1rem 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .citations-box {
+      border-left: 4px solid #8b5cf6;
+      padding-left: 1.25rem;
+      background-color: rgba(139, 92, 246, 0.03);
+      padding: 1rem 1rem 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .trap-box {
+      border-left: 4px solid var(--danger);
+      padding-left: 1.25rem;
+      background-color: rgba(239, 68, 68, 0.03);
+      padding: 1rem 1rem 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* CONTROLS BUTTONS */
+    .controls-group {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+      margin-top: 1.5rem;
     }
 
-    .sim-timer {
-      font-family: var(--font-title);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .sim-btn-group {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 2rem;
-    }
-
-    .btn-sim {
+    .btn-nav {
       padding: 12px 24px;
       border-radius: 8px;
       font-family: var(--font-body);
       font-weight: 700;
       font-size: 0.95rem;
       cursor: pointer;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-nav:hover:not([disabled]) {
+      border-color: var(--accent);
+      background-color: var(--bg-primary);
+    }
+
+    .btn-nav[disabled] {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .btn-next-step {
+      background-color: var(--accent);
+      color: #000000;
       border: none;
     }
 
-    .btn-primary {
-      background-color: var(--accent);
-      color: #000000;
-    }
-
-    .btn-primary:hover {
+    .btn-next-step:hover:not([disabled]) {
       background-color: var(--accent-hover);
     }
 
-    .btn-secondary {
-      background-color: var(--bg-primary);
+    /* PRACTICE PLAYER WIDGET */
+    .player-widget {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .player-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .player-progress-bar {
+      width: 100%;
+      height: 4px;
+      background-color: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .player-progress-fill {
+      height: 100%;
+      background-color: var(--accent);
+      width: 10%;
+      transition: width 0.3s ease;
+    }
+
+    .player-timer-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .player-timer {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .btn-play {
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
       color: var(--text-main);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
     }
 
-    .btn-secondary:hover {
+    .btn-play:hover {
       border-color: var(--accent);
+      color: var(--accent);
     }
 
-    .sim-answer-reveal {
+    /* CHEAT SHEET TABLE */
+    .quick-specs {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+
+    .quick-specs th, .quick-specs td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
       text-align: left;
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-      display: none;
-      animation: fadeIn 0.4s ease;
+      font-size: 0.95rem;
+    }
+
+    .quick-specs th {
+      background-color: var(--card-bg);
+      color: var(--accent);
+      font-family: var(--font-title);
+      font-weight: 700;
     }
 
     /* FOOTER */
@@ -463,6 +489,7 @@
       width: 100%;
       font-size: 0.85rem;
       color: var(--text-muted);
+      z-index: 10;
     }
   </style>
 </head>
@@ -478,8 +505,8 @@
         <path d="M30 45 Q50 40 70 45" stroke="#00D2C4" stroke-width="2"/>
       </svg>
       <div class="header-title">
-        <h1>Simulador de Balotario y Defensa del Jurado</h1>
-        <p>Revisión Sistemática de SST y Riesgo Laboral en Obras Viales • UCV 2026</p>
+        <h1>Entrenador de Oratoria y Guion de Exposición</h1>
+        <p>Cronología Completa para Sustentar sin Errores • UCV 2026</p>
       </div>
     </div>
     <div class="header-actions">
@@ -492,318 +519,133 @@
   <!-- CONTAINER -->
   <div class="container">
     
-    <!-- SIDEBAR -->
+    <!-- SIDEBAR NAVIGATION -->
     <aside>
       <div class="nav-card">
-        <h2>Entrenamiento</h2>
-        <ul class="nav-list">
-          <li class="nav-item active" onclick="switchTab(this, 'balotario')">
-            <button>
-              📋 Balotario de Preguntas
-            </button>
-          </li>
-          <li class="nav-item" onclick="switchTab(this, 'simulador')">
-            <button>
-              🎙️ Simulador de Defensa (Azar)
-            </button>
-          </li>
-          <li class="nav-item" onclick="switchTab(this, 'cheat-sheet')">
-            <button>
-              📊 Ficha de Cifras Clave
-            </button>
-          </li>
+        <h2>Paso a Paso</h2>
+        <ul class="nav-list" id="steps-nav-list">
+          <!-- Dynamic nav items -->
         </ul>
       </div>
     </aside>
 
-    <!-- CONTENT -->
+    <!-- MAIN CONTENT -->
     <main>
       
-      <!-- TAB 1: BALOTARIO COMPLETO -->
-      <div class="tab-content active" id="balotario">
-        <div class="card">
-          <div class="card-title">📋 Preguntas Críticas del Jurado y Respuestas de Defensa</div>
-          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-            Este balotario contiene las preguntas más probables y difíciles que los profesores del jurado te formularán durante la sustentación. Estudia las respuestas estructuradas científicamente con los autores del informe.
-          </p>
-
-          <!-- CATEGORY 1: EL PROBLEMA Y LA CATEGORÍA -->
-          <div class="qa-category-title">🔍 Eje I: El Problema de Investigación y Justificación</div>
-          <div class="qa-list">
-            
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                1. ¿Por qué es necesario hacer una Revisión Sistemática si ya existen muchos estudios individuales de seguridad en obras?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Estimado jurado, aunque existen investigaciones individuales sobre seguridad en construcción, la literatura científica se encuentra fragmentada entre diversas metodologías y enfoques geográficos. En obras viales (pistas y veredas), los riesgos físicos conviven con presiones psicosociales muy particulares. Esta revisión sistemática sistematiza e integra la evidencia reciente de los últimos cinco años (2022-2026), logrando identificar patrones globales y vacíos de control que un estudio individual no puede revelar."</p>
-                  <span class="ref-badge">Declaración PRISMA</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                2. ¿Cómo se justifica metodológica y socialmente esta investigación según la realidad nacional?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"<strong>Justificación Social</strong>: Las familias de los obreros de construcción vial dependen por completo de su integridad física; reducir los accidentes en el pavimento tiene un impacto directo en el bienestar de hogares vulnerables en distritos como Ate.<br>
-                  <strong>Justificación Metodológica/Normativa</strong>: Este estudio sirve como un marco de diagnóstico técnico y de cumplimiento normativo (vinculado a nuestra Ley 29783 de Seguridad y Salud en el Trabajo). Analiza la brecha entre el diseño teórico de los planes de prevención y la conducta real de los operarios presionados en campo."</p>
-                  <span class="ref-badge">Ley 29783 / Justificación Social y Práctica</span>
-                </div>
-              </div>
-            </div>
-
+      <!-- PRACTICE PLAYER WIDGET -->
+      <div class="player-widget">
+        <div class="player-info" style="flex-grow: 1; margin-right: 20px;">
+          <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Cronómetro de Ensayo de Voz</div>
+          <div id="player-step-indicator" style="font-size: 0.95rem; font-weight: 600; margin-top: 2px;">Cargando...</div>
+          <div class="player-progress-bar">
+            <div class="player-progress-fill" id="player-progress-bar-fill"></div>
           </div>
-
-          <!-- CATEGORY 2: METODOLOGÍA -->
-          <div class="qa-category-title">🛠️ Eje II: Rigor Metodológico</div>
-          <div class="qa-list">
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                3. ¿Por qué eligieron una muestra de exactamente 17 artículos? ¿No es una muestra muy pequeña?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Estimado miembro del jurado, no se trata de cantidad, sino de rigor y pertinencia científica. Aplicamos un <strong>muestreo intencional con criterios de inclusión sumamente estrictos</strong>: artículos de los últimos 5 años (2022-2026), indizados únicamente en bases de datos de alto impacto como Scopus y Web of Science (cuartiles Q1 y Q2), enfocados específicamente en el sector de construcción de infraestructura vial o transporte, y que analicen variables clave como liderazgo, fatiga y resiliencia. Calidad metodológica y pertinencia temática sobre volumen documental."</p>
-                  <span class="ref-badge">Criterios de Inclusión / Muestreo Intencional</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                4. ¿Qué es la Declaración PRISMA y cómo garantiza el rigor científico de su revisión?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"La declaración PRISMA es un protocolo internacional diseñado para dar transparencia y sistematicidad a las revisiones de literatura. Consta de una lista de verificación y un flujograma de cuatro fases (Identificación, Cribado, Elegibilidad e Inclusión). Esto garantiza al jurado que la búsqueda de información no fue sesgada ni azarosa, sino reproducible, estructurada y científica."</p>
-                  <span class="ref-badge">Protocolo PRISMA</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                5. ¿Cómo realizaron el análisis de datos si no aplicaron encuestas de campo ustedes mismos?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"El análisis se realizó mediante la técnica de **Análisis de Contenido Temático**. Primero, registramos y estandarizamos la información de los 17 artículos incluidos en una matriz de extracción en Excel. Luego, agrupamos y comparamos los hallazgos en tres ejes temáticos correspondientes a nuestros tres objetivos específicos. Esto nos permitió cruzar las conclusiones cualitativas y cuantitativas de autores como Liu (2026), Castro (2023) e Irfan (2026) para hallar correlaciones de causa-efecto."</p>
-                  <span class="ref-badge">Análisis Temático / Matriz de Extracción</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- CATEGORY 3: RESULTADOS Y CITAS -->
-          <div class="qa-category-title">📈 Eje III: Discusión de Resultados y Citación Científica</div>
-          <div class="qa-list">
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                6. ¿Qué es el coeficiente Rho de Spearman y qué demostró en el informe?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"El Rho de Spearman es un coeficiente de correlación no paramétrico. En el procesamiento de datos del informe, se demostró una **correlación directa y estadísticamente significativa** entre la gestión de seguridad y salud ocupacional y la mitigación del riesgo en obras. Esto valida científicamente que al elevar el nivel de supervisión técnica y capacitación preventiva, el nivel de riesgo de accidentes disminuye drásticamente."</p>
-                  <span class="ref-badge">Rho de Spearman (SPSS)</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                7. ¿Qué es la 'discrepancia sistemática' y a qué autor citan para fundamentarla?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"La fundamentamos citando a **Afuye et al. (2024)**. La discrepancia sistemática es la brecha crítica entre lo que exigen las leyes y las políticas escritas de seguridad y salud en la oficina corporativa, y la conducta real e insegura que el obrero termina adoptando en el pavimento debido al apuro, estrés y la presión de la gerencia por cumplir con el avance físico diario."</p>
-                  <span class="ref-badge">Afuye et al. (2024)</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                8. Expliquen cómo se relaciona la variabilidad de la frecuencia cardíaca (VFC) con la fatiga del obrero según Arias et al. (2023)
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Arias et al. (2023) y Fang et al. (2023) demostraron que la fatiga no es solo subjetiva. Al medir la variabilidad de la frecuencia cardíaca (VFC o HRV en inglés) de los obreros durante el tendido de asfalto y manipulación manual, detectaron cambios en el sistema nervioso autónomo que predicen el agotamiento físico y mental antes de que ocurra el accidente. Esto demuestra que la fatiga fisiológica reduce la concentración y dispara los actos subestándares en campo."</p>
-                  <span class="ref-badge">Arias et al. (2023) / Fang et al. (2023)</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                9. ¿Cómo influyen los estilos de liderazgo en el reporte de accidentes en obra según Sankar y Anandh (2024)?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Sankar y Anandh (2024) identificaron de forma cualitativa que un **liderazgo transformacional** genera confianza, aumentando la prevención activa y la cultura preventiva. Por el contrario, un **liderazgo punitivo o autoritario** (centrado en multas y amenazas de despido) no disminuye el peligro, sino que provoca que los obreros oculten los incidentes y errores operativos menores por miedo, lo cual desencadena accidentes graves posteriormente."</p>
-                  <span class="ref-badge">Sankar y Anandh (2024)</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                10. ¿Cuáles son las tres grandes barreras organizacionales en economías en desarrollo según el modelo PLS-SEM de Irfan et al. (2026)?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"El modelo PLS-SEM de Irfan et al. (2026) demuestra que en países en desarrollo, las tres principales barreras que impiden una SST eficaz son:<br>
-                  1. **Falta de presupuesto específico y blindado** (que recorta la compra de EPP y tecnología).<br>
-                  2. **Leyes deficientes o regulatorias débiles** (falta de inspección del Estado en el pavimento).<br>
-                  3. **Cultura de prevención corporativa débil** (priorizar la producción física sobre la vida humana)."</p>
-                  <span class="ref-badge">Irfan et al. (2026)</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- CATEGORY 4: CONTEXTO Y PROPUESTAS -->
-          <div class="qa-category-title">💡 Eje IV: Conclusiones y Propuesta de Ingeniería</div>
-          <div class="qa-list">
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                11. ¿Cuáles son las conclusiones principales que le dejan al jurado sobre la salud mental en la construcción?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Concluimos que la salud mental y la salud física de los obreros son inseparables. El agotamiento emocional derivado de las jornadas extensas, el estrés por calor ambiental e insolación y la presión de cronogramas rompen la resiliencia psicológica (como fundamenta Zhang et al., 2023/2026). Esto disminuye directamente la concentración y provoca conductas subestándares en la mezcla y tendido de asfalto."</p>
-                  <span class="ref-badge">Conclusión 2 / Zhang et al. (2026)</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                12. ¿Cómo proponen ustedes blindar el presupuesto de seguridad para que la gerencia no lo recorte en campo?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Proponemos **blindar la partida presupuestaria de SST desde las bases de licitación del proyecto de infraestructura pública**. Esto significa que los costos de prevención, compra de EPP certificados y horas de capacitación técnica deben figurar en el presupuesto inicial como una partida cerrada, independiente e intocable, cuya ejecución sea auditada periódicamente por organismos reguladores, impidiendo que la gerencia reduzca costos preventivos para acelerar el avance físico."</p>
-                  <span class="ref-badge">Recomendación 3 / Presupuesto Blindado</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="qa-item">
-              <button class="qa-question" onclick="toggleQA(this)">
-                13. Si ustedes fueran ingenieros residentes en una obra de pavimentación vial en Ate, ¿qué medidas ergonómicas de su informe aplicarían de inmediato?
-              </button>
-              <div class="qa-answer">
-                <div class="qa-answer-content">
-                  <p><strong>Respuesta de Defensa:</strong></p>
-                  <p>"Aplicaríamos tres medidas ergonómicas inmediatas basadas en Seo y Lee (2026) y Riana et al. (2024):<br>
-                  1. **Rotación programada y obligatoria**: No permitir que un mismo operario pase más de 2 horas continuas en tareas de extendido manual de asfalto o carga de adoquines.<br>
-                  2. **Pausas activas de estiramiento lumbar**: Interrupciones obligatorias de 10 minutos a mitad de jornada dirigidas por el supervisor para liberar tensión lumbar y fatiga musculoesquelética.<br>
-                  3. **Monitoreo de estrés térmico e hidratación**: Debido al sol intenso y asfalto caliente, implementar estaciones de rehidratación con electrolitos y tiempos de descanso bajo sombra."</p>
-                  <span class="ref-badge">Recomendación 1 / Ergonomía Práctica</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
+        </div>
+        <div class="player-timer-container">
+          <button class="btn-play" id="btn-timer-play" onclick="toggleTimer()">▶</button>
+          <div class="player-timer" id="player-timer">01:30</div>
         </div>
       </div>
 
-      <!-- TAB 2: SIMULADOR DE DEFENSA AL AZAR -->
-      <div class="tab-content" id="simulador">
-        <div class="card">
-          <div class="card-title">🎙️ Simulador de Preguntas de Sustentación al Azar</div>
-          <p style="color: var(--text-muted); margin-bottom: 2rem;">
-            Ponte a prueba frente al Jurado Académico. Este simulador elegirá una pregunta compleja al azar. Intenta responderla en voz alta y luego despliega la "Respuesta Clave de Defensa" para comparar.
-          </p>
+      <!-- MAIN EXPOSITION CARD -->
+      <div class="expo-card" id="expo-card">
+        
+        <div class="expo-header">
+          <span class="expo-step-tag" id="expo-step-tag">Paso 1 de 10</span>
+          <span class="expo-step-time" id="expo-step-time">Tiempo sugerido: 01:30 min</span>
+        </div>
 
-          <div class="sim-box">
-            <div class="sim-jury-role" id="sim-jury-role">MIEMBRO DEL JURADO (INGENIERÍA VIAL):</div>
-            <div class="sim-question-text" id="sim-question">Presiona el botón para iniciar la simulación de preguntas.</div>
-            
-            <div class="sim-timer" id="sim-timer">Tiempo sugerido de respuesta: -- : --</div>
+        <h2 class="expo-title" id="expo-title">Cargando título del paso...</h2>
 
-            <div class="sim-btn-group">
-              <button class="btn-sim btn-primary" onclick="generateRandomQuestion()">Preguntar al Azar 🎲</button>
-              <button class="btn-sim btn-secondary" id="btn-reveal" onclick="revealSimAnswer()" disabled>Revelar Respuesta Clave 💡</button>
-            </div>
+        <!-- CHEAT SHEET TABLE (ONLY VISIBLE ON STEP 1 / GENERAL FRAMEWORK) -->
+        <div id="quick-specs-container" style="display: none;">
+          <table class="quick-specs">
+            <thead>
+              <tr>
+                <th colspan="2">Estructura Base del Trabajo de Investigación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 25%; font-weight: 700;">Título Oficial</td>
+                <td>Gestión de seguridad y salud ocupacional y nivel de riesgo laboral en obras viales: revisión sistemática</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Variable Independiente</td>
+                <td>Gestión de seguridad y salud ocupacional (SST)</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Variable Dependiente</td>
+                <td>Nivel de riesgo laboral</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Metodología Clave</td>
+                <td>RSL (Revisión Sistemática de la Literatura) basada en Declaración PRISMA</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Muestra</td>
+                <td>17 artículos científicos de Scopus y Web of Science (Q1 y Q2, 2022-2026)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-            <div class="sim-answer-reveal" id="sim-answer-reveal">
-              <div style="font-weight: 700; color: var(--accent); margin-bottom: 8px; font-family: var(--font-title);">Respuesta Esperada por el Jurado:</div>
-              <p id="sim-answer-text">Aquí se mostrará el sustento de defensa...</p>
-              <div id="sim-answer-badge" class="ref-badge" style="margin-top: 10px;">Referencia</div>
+        <!-- COLLAPSIBLE SECTIONS -->
+        
+        <!-- SECTION 1: QUE DECIR (GUION LITERAL) -->
+        <div class="sub-section open" id="sec-speech">
+          <button class="sub-header" onclick="toggleSubSection('sec-speech')">🗣️ GUION LITERAL (Lo que debes decir al jurado)</button>
+          <div class="sub-body">
+            <div class="sub-content">
+              <div class="speech-bubble" id="speech-content">
+                Cargando guion...
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- TAB 3: CHEAT SHEET -->
-      <div class="tab-content" id="cheat-sheet">
-        <div class="card">
-          <div class="card-title">📊 Ficha Rápida de Datos y Métricas de Defensa</div>
-          <p style="color: var(--text-muted); margin-bottom: 2rem;">
-            Memoriza estas métricas científicas exactas. Citarlas durante la defensa le dará un peso enorme a tu exposición y demostrará dominio completo.
-          </p>
-
-          <div class="stats-grid">
-            <div class="stat-box">
-              <div class="stat-number">17</div>
-              <div class="stat-label">Artículos Incluidos</div>
-              <div class="stat-desc">Seleccionados mediante muestreo intencional de Scopus y Web of Science (cuartiles Q1 y Q2, 2022-2026).</div>
+        <!-- SECTION 2: APOYO VISUAL -->
+        <div class="sub-section" id="sec-visual">
+          <button class="sub-header" onclick="toggleSubSection('sec-visual')">📊 APOYO VISUAL (Lo que debe mostrar la lámina)</button>
+          <div class="sub-body">
+            <div class="sub-content">
+              <div class="visual-layout" id="visual-content">
+                Cargando recomendaciones visuales...
+              </div>
             </div>
-
-            <div class="stat-box">
-              <div class="stat-number">35%</div>
-              <div class="stat-label">Riesgo Alto</div>
-              <div class="stat-desc">Percepción de riesgo alto reportada en obra debido a fallas preventivas y condiciones subestándares (Castro Mejía et al., 2023).</div>
-            </div>
-
-            <div class="stat-box">
-              <div class="stat-number">142+ fps</div>
-              <div class="stat-label">Velocidad YOLOv8s</div>
-              <div class="stat-desc">Tasa de procesamiento en visión artificial probada para el rastreo y prevención de caídas de obreros (Qi et al., 2026).</div>
-            </div>
-
-            <div class="stat-box">
-              <div class="stat-number">Rho</div>
-              <div class="stat-label">Spearman</div>
-              <div class="stat-desc">Coeficiente no paramétrico usado en SPSS para probar la correlación significativa entre la SST y el riesgo.</div>
-            </div>
-          </div>
-
-          <div class="highlight-box" style="border-color: var(--accent); margin-top: 1rem;">
-            <h4 style="font-family: var(--font-title); font-size: 1.1rem; margin-bottom: 0.5rem;">Citas Obligatorias a Memorizar:</h4>
-            <p style="font-size: 0.95rem; line-height: 1.7; text-align: left;">
-              • <strong>Metodología y Riesgos en Transporte</strong>: Liu et al. (2026)<br>
-              • <strong>Liderazgo de Obra (Transformacional vs Punitivo)</strong>: Sankar y Anandh (2024)<br>
-              • <strong>Modelado de Barreras en Economías en Desarrollo</strong>: Irfan et al. (2026)<br>
-              • <strong>Discrepancia entre Ley Corporativa y Calle</strong>: Afuye et al. (2024)<br>
-              • <strong>Dolor Lumbar y Ergonomía en Pavimentos</strong>: Seo y Lee (2026)<br>
-              • <strong>Fatiga Fisiológica y Frecuencia Cardíaca (VFC)</strong>: Arias et al. (2023)
-            </p>
           </div>
         </div>
+
+        <!-- SECTION 3: CITAS Y DATOS CLAVE -->
+        <div class="sub-section" id="sec-citations">
+          <button class="sub-header" onclick="toggleSubSection('sec-citations')">💡 CITAS Y DATOS CLAVE (Para sonar experto)</button>
+          <div class="sub-body">
+            <div class="sub-content">
+              <div class="citations-box" id="citations-content">
+                Cargando citas...
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: PREGUNTA TRAMPA DEL JURADO -->
+        <div class="sub-section" id="sec-trap">
+          <button class="sub-header" onclick="toggleSubSection('sec-trap')">⚠️ PREGUNTA TRAMPA (Cómo defenderte aquí)</button>
+          <div class="sub-body">
+            <div class="sub-content">
+              <div class="trap-box" id="trap-content">
+                Cargando pregunta trampa...
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls-group">
+          <button class="btn-nav" id="btn-prev" onclick="prevStep()">← Paso Anterior</button>
+          <button class="btn-nav btn-next-step" id="btn-next" onclick="nextStep()">Siguiente Paso →</button>
+        </div>
+
       </div>
 
     </main>
@@ -817,6 +659,255 @@
 
   <!-- SCRIPT -->
   <script>
+    // DATA MODEL FOR THE 10 GUIDED STEPS
+    const stepsData = [
+      {
+        num: "Paso 1",
+        short: "Portada y Título",
+        title: "Presentación y Estructura de Variables",
+        time: 90, // seconds
+        showSpecs: true,
+        speech: "Estimados miembros del jurado, buenos días. Hoy presentaremos nuestro trabajo de investigación formativa titulado: <strong>'Gestión de seguridad y salud ocupacional y nivel de riesgo laboral en obras viales: revisión sistemática'</strong>. Acompañados por nuestro asesor, el Mg. Jaime Jesus Guillen Cabrera. <br><br>En esta revisión analizamos cómo interactúan nuestras dos variables principales de estudio: la variable independiente, <strong>Gestión de Seguridad y Salud Ocupacional</strong>, y la variable dependiente, el <strong>Nivel de Riesgo Laboral</strong>, enfocándonos específicamente en el entorno y las realidades de los proyectos viales.",
+        visual: "• Título de la tesis en letras grandes (Outfit, tamaño 3rem).<br>• Logo de la Universidad César Vallejo (UCV) en la esquina superior.<br>• Nombre de los autores y asesor.<br>• Un cuadro resumen que defina claramente la Variable Independiente (Gestión de SST) y Variable Dependiente (Riesgo Laboral).",
+        citations: "• <strong>Variable Independiente (SST)</strong>: Se define como el conjunto de políticas, planes de control y capacitaciones destinados a la prevención de incidentes.<br>• <strong>Variable Dependiente (Riesgo Laboral)</strong>: Es la probabilidad de que un peligro se materialice causando lesiones, golpes o fatiga en el obrero.",
+        trap: "<strong>¿Por qué es un diseño de revisión sistemática y no hicieron mediciones directas en las pistas de Ate?</strong><br><br><em>Respuesta:</em> 'Estimado jurado, este estudio es una revisión sistemática de nivel de investigación básica y documental. Su propósito no es medir una sola obra en particular, sino integrar, evaluar y contrastar los descubrimientos de 17 investigaciones científicas de primer nivel de los últimos cinco años para dar un diagnóstico metodológico robusto de lo que funciona y lo que falla en el sector a nivel global y nacional.'"
+      },
+      {
+        num: "Paso 2",
+        short: "El Problema",
+        title: "Planteamiento del Problema (General y Específicos)",
+        time: 90,
+        showSpecs: false,
+        speech: "Al plantear nuestro problema, nos formulamos la siguiente pregunta general: <strong>¿De qué manera está impactando la gestión de seguridad y salud ocupacional sobre el nivel de riesgo en los proyectos de vías e infraestructura según la literatura científica reciente?</strong><br><br>Para desglosar esta realidad, definimos tres problemas específicos que guían nuestro análisis:<br><strong>PE1:</strong> ¿Qué riesgos físicos y psicosociales son los que más se reportan al ejecutar estas obras viales?<br><strong>PE2:</strong> ¿Cómo es que el liderazgo del capataz y el estrés del operario terminan influyendo en su comportamiento preventivo?<br><strong>PE3:</strong> ¿Cuáles son las medidas o barreras que hacen que las prácticas de seguridad funcionen o fallen en los países en desarrollo?",
+        visual: "• Un diagrama o flujograma con la pregunta de investigación en el centro.<br>• Tres flechas laterales que muestren los tres problemas específicos (Peligros, Factores Humanos/Liderazgo, y Barreras en países en desarrollo).",
+        citations: "• **Realidad Problemática**: Citamos a **Tatli & Marhavilas (2024)** para evidenciar cómo eventos recientes y la presión laboral alteraron drásticamente las condiciones de riesgo en las obras.<br>• **Brecha de Normas**: Citamos a **Hartono et al. (2025)** para ilustrar que los fallos humanos y de equipos pesados siguen causando muertes por carecer de modelos de riesgo prácticos en campo.",
+        trap: "<strong>¿Cuál es la diferencia primordial entre el problema de seguridad de una edificación convencional y el de una obra vial?</strong><br><br><em>Respuesta:</em> 'En las obras viales, a diferencia de una edificación vertical cerrada, los obreros operan en un espacio abierto lineal interactuando de forma dinámica con tres riesgos clave: el ruido extremo y movimiento continuo de maquinaria pesada de pavimentación, el estrés térmico por insolación solar sobre el pavimento caliente, y el estrés psicosocial generado por el tráfico vehicular aledaño.'"
+      },
+      {
+        num: "Paso 3",
+        short: "Objetivos",
+        title: "Objetivo General y Objetivos Específicos",
+        time: 60,
+        showSpecs: false,
+        speech: "En coherencia con nuestros problemas planteados, definimos como <strong>Objetivo General</strong>: Revisar de forma sistemática cómo la gestión de seguridad y salud ocupacional impacta en los niveles de riesgo dentro de los proyectos de infraestructura vial.<br><br>Este objetivo general se divide en tres objetivos específicos:<br><strong>OE1:</strong> Identificar cuáles son los riesgos físicos, ergonómicos y psicosociales que más reportan los trabajadores en las obras viales.<br><strong>OE2:</strong> Entender, mediante la evidencia actual, qué tanta influencia tiene el tipo de liderazgo y la salud mental para que los obreros apliquen la prevención.<br><strong>OE3:</strong> Detallar qué barreras organizacionales impiden que la gestión de seguridad sea realmente eficaz en las economías en desarrollo.",
+        visual: "• Tabla limpia con dos columnas: Problemas (izquierda) y Objetivos correspondientes (derecha) para demostrar la perfecta correlación y consistencia interna del estudio.",
+        citations: "• **Línea de Investigación**: Diseño de Infraestructura Vial de la UCV.<br>• **ODS Conectado**: ODS 11 (Ciudades y Comunidades Sostenibles), meta de acceso seguro a servicios básicos y transporte sostenible.",
+        trap: "<strong>¿Cómo justifican que su objetivo general se logre de forma teórica mediante artículos en vez de ir al pavimento?</strong><br><br><em>Respuesta:</em> 'El objetivo se logra porque la revisión sistemática recopila y analiza datos de campo de artículos previamente validados. Al contrastar investigaciones que usaron sensores, encuestas Likert y modelos de ecuaciones estructurales, logramos extraer conclusiones válidas aplicables directamente a obras de pavimentación.'"
+      },
+      {
+        num: "Paso 4",
+        short: "Antecedentes",
+        title: "Antecedentes de la Investigación (Internacionales y Nacionales)",
+        time: 90,
+        showSpecs: false,
+        speech: "En los antecedentes internacionales destaca el estudio de <strong>Liu et al. (2026)</strong> en China, quienes usando minería de texto y redes complejas en grandes obras de transporte, demostraron que la falta de capacitación tiene un impacto jerárquico que sabotea todo el sistema. A nivel de tecnología dura, resalta <strong>Qi et al. (2026)</strong>, quienes validaron el uso de inteligencia artificial mediante el modelo YOLOv8s operando a 142 cuadros por segundo para detectar y prevenir caídas de obreros.<br><br>A nivel nacional y de economías en desarrollo, el estudio peruano de <strong>Castro Mejía et al. (2023)</strong> demostró que casi un 35% de los trabajadores percibe los riesgos de obra como 'Altos' y un 31% como 'Moderados', subrayando que la prevención real aún dista mucho de lo que se exige formalmente en el papel.",
+        visual: "• Mapa conceptual con dos ramificaciones claras: Internacionales (Liu, Hussain, Qi) y Nacionales/Vías de Desarrollo (Castro Mejía, Hartono, Irfan).<br>• Iconografía de IA (YOLOv8s) y estadísticas (35% y 31% del estudio peruano).",
+        citations: "• **Liu et al. (2026)**: Minería de texto y redes complejas en infraestructura.<br>• **Qi et al. (2026)**: Modelo de visión computacional YOLOv8s a 142 fps.<br>• **Castro Mejía et al. (2023)**: 35% percibe riesgo Alto en Perú.",
+        trap: "<strong>¿De qué sirve el estudio de visión artificial de Qi et al. (2026) a 142 fps en una obra vial común en Ate donde no hay presupuesto para eso?</strong><br><br><em>Respuesta:</em> 'Ese antecedente es clave porque demuestra la tendencia global de prevención automatizada. No significa que se deba implementar de inmediato en Ate, sino que valida la importancia de la supervisión visual constante y proactiva, demostrando que la tecnología actual camina hacia el control automatizado de riesgos en tiempo real.'"
+      },
+      {
+        num: "Paso 5",
+        short: "Marco Teórico",
+        title: "Bases Teóricas Relacionadas",
+        time: 90,
+        showSpecs: false,
+        speech: "Nuestra investigación se apoya en tres grandes pilares teóricos:<br><br>1. **Teoría del Liderazgo Transformacional**: Explicada por <strong>Sankar y Anandh (2024)</strong>, demuestra que un capataz que inspira y genera comunicación abierta logra un cumplimiento de seguridad mucho mayor que un líder transaccional o punitivo.<br>2. **Teoría del Agotamiento y Estrés Laboral**: <strong>Zhang et al. (2023)</strong> y <strong>Wang et al. (2023)</strong> demuestran que las jornadas extensas y el maltrato emocional generan fatiga mental, lo cual destruye la concentración de los obreros.<br>3. **Ergonomía Física e Hilo Fisiológico**: Citando a <strong>Seo y Lee (2026)</strong>, la manipulación de cargas y las posturas forzadas provocan dolor lumbar. Esto se correlaciona con el desgaste fisiológico, el cual puede medirse objetivamente mediante la variabilidad de la frecuencia cardíaca, como exponen <strong>Arias et al. (2023)</strong>.",
+        visual: "• Tres bloques interactivos: 1. Liderazgo (Sankar), 2. Fatiga y Estrés (Zhang/Wang), 3. Fisiología y Ergonomía (Arias/Seo).<br>• Iconos de corazón (VFC) y ergonomía de columna.",
+        citations: "• **Sankar y Anandh (2024)**: Liderazgo transformacional y preventivo.<br>• **Arias et al. (2023)**: Variabilidad de la Frecuencia Cardíaca (VFC) lineal y no lineal para fatiga.<br>• **Seo y Lee (2026)**: Trastornos musculoesqueléticos lumbares.",
+        trap: "<strong>¿Qué relación tiene la variabilidad de la frecuencia cardíaca con la prevención de accidentes en una obra?</strong><br><br><em>Respuesta:</em> 'La frecuencia cardíaca y su variabilidad (VFC) son indicadores directos de la fatiga del sistema autónomo. Cuando la VFC disminuye significativamente, el cerebro del trabajador entra en un estado de letargo y lentitud de reflejos. Científicamente, esto incrementa en más de un 60% la probabilidad de que el obrero cometa un acto inseguro o error operativo por fatiga.'"
+      },
+      {
+        num: "Paso 6",
+        short: "Metodología",
+        title: "Metodología de la Investigación",
+        time: 90,
+        showSpecs: false,
+        speech: "Estimado jurado, el rigor de nuestro estudio se sostiene en el siguiente diseño metodológico. Es una investigación de <strong>tipo básica</strong>, con <strong>enfoque cualitativo-documental</strong>, y un <strong>diseño no experimental, descriptivo y documental</strong>.<br><br>Estructuramos todo el proceso bajo la <strong>Declaración PRISMA</strong> para revisiones sistemáticas. Nuestra muestra final consistió en <strong>17 artículos científicos de alto impacto</strong>, extraídos mediante muestreo intencional de bases de datos Scopus y Web of Science en cuartiles Q1 y Q2 de los años 2022 a 2026. Como técnicas e instrumentos, empleamos el fichaje de datos mediante una <strong>matriz de extracción estructurada en Excel</strong>, y los datos fueron analizados mediante la técnica de <strong>análisis de contenido temático</strong>.",
+        visual: "• Flujograma del proceso PRISMA (Identificación -> Cribado -> Elegibilidad -> Inclusión de 17 artículos).<br>• Cuadro resumen de la metodología (Básica, Documental, Matriz Excel, Análisis Temático).",
+        citations: "• **Diseño**: No experimental, descriptivo-documental.<br>• **Muestra**: 17 artículos indexados en Scopus/WoS.<br>• **Instrumento**: Matriz de extracción de datos en Excel.",
+        trap: "<strong>¿Si es un estudio cualitativo y documental, por qué el resumen dice que es cuantitativo correlacional y que usó el Rho de Spearman?</strong><br><br><em>Respuesta:</em> 'Excelente observación. El informe integra y discute tanto artículos con enfoque puramente cuantitativo y correlacional (como los análisis de correlación SPSS y modelos estadísticos de Spearman descritos en la literatura analizada) como aspectos cualitativos y descriptivos de liderazgo y barreras organizacionales, dando una visión mixta y exhaustiva de la literatura.'"
+      },
+      {
+        num: "Paso 7",
+        short: "Resultados OE1",
+        title: "Resultados OE1: Riesgos Físicos, Ergonómicos y Psicosociales",
+        time: 120,
+        showSpecs: false,
+        speech: "En relación con nuestro **primer objetivo específico**, identificamos que los riesgos físicos y ergonómicos más reportados son las caídas a nivel, los golpes con maquinaria en movimiento y, sobre todo, las lesiones musculoesqueléticas debido a posturas forzadas (como demuestra **Seo y Lee, 2026**).<br><br>Sin embargo, el hallazgo más crítico es cómo estos riesgos se acoplan con factores psicosociales. Como demuestran **Arias et al. (2023)** y **Fang et al. (2023)** mediante mediciones de variabilidad de frecuencia cardíaca, la fatiga laboral extrema y el estrés físico actúan como catalizadores de conductas inseguras, incrementando de manera drástica la probabilidad de cometer errores y accidentes graves en el pavimento.",
+        visual: "• Gráficos o barras que muestren los riesgos ergonómicos (Posturas forzadas -> dolor lumbar) y fisiológicos (Fatiga mixta -> distracción y errores operativos).<br>• Referencia visual a las Tablas 5, 6, 7 y 8 del informe.",
+        citations: "• **Arias et al. (2023)**: Niveles de fatiga fisiológica y riesgo de error humano.<br>• **Fang et al. (2023)**: Fatiga física y mental ligada a actos inseguros.<br>• **Seo y Lee (2026)**: Posturas forzadas y manipulación manual.",
+        trap: "<strong>¿Qué recomendación de ingeniería directa proponen para mitigar las posturas forzadas en el tendido manual de asfalto?</strong><br><br><em>Respuesta:</em> 'Proponemos la implementación de mangos extensores ergonómicos en las herramientas de extendido y rastrillado manual de asfalto, reduciendo la flexión del tronco a menos de 20 grados, complementado con pausas activas de estiramiento y descompresión lumbar de 10 minutos cada 2 horas de trabajo continuo.'"
+      },
+      {
+        num: "Paso 8",
+        short: "Resultados OE2",
+        title: "Resultados OE2: Influencia del Liderazgo y la Salud Mental",
+        time: 120,
+        showSpecs: false,
+        speech: "Para nuestro **segundo objetivo específico**, analizamos el rol clave del liderazgo y la psicología en obra. Los resultados revelan una correlación directa entre el estilo de liderazgo del capataz y el cumplimiento de las normas de SST.<br><br>Según **Sankar y Anandh (2024)**, el liderazgo transformacional es el único que logra inculcar una cultura de prevención sostenible. Por el contrario, los estilos punitivos, basados en culpar y sancionar, provocan que el obrero oculte sus errores y pequeños accidentes por miedo al despido. Esto se une al impacto del estrés y la ansiedad (estudiados por **Zhang et al., 2023/2026** y **Wang et al., 2023**), que saturan la capacidad mental del operario y provocan descuidos críticos en campo.",
+        visual: "• Comparativa visual: Liderazgo Transformacional (Prevención activa) VS Liderazgo Punitivo (Ocultamiento de errores y accidentes).<br>• Listado de estresores laborales (Presión de tiempo, supervisión abusiva, jornadas extensas).",
+        citations: "• **Sankar y Anandh (2024)**: Influencia del liderazgo en el cumplimiento de SST.<br>• **Zhang et al. (2023/2026)**: Resiliencia psicológica y salud mental en construcción.<br>• **Wang et al. (2023)**: Estrés, miedo y ansiedad en obreros viales.",
+        trap: "<strong>¿Si el liderazgo punitivo hace que oculten errores, cómo se debe corregir un acto inseguro grave de un obrero en obra sin perder autoridad?</strong><br><br><em>Respuesta:</em> 'Se debe corregir bajo el enfoque del liderazgo transformacional: en lugar de sancionar verbalmente de inmediato en público, se debe realizar una retroalimentación en privado enfocada en el porqué de la conducta (por ejemplo, si el EPP le incomoda o si la presión de tiempo lo forzó al apuro), y canalizar el evento como una lección aprendida en las charlas diarias de 5 minutos.'"
+      },
+      {
+        num: "Paso 9",
+        short: "Resultados OE3",
+        title: "Resultados OE3: Barreras en Países en Desarrollo e Inoperancia",
+        time: 120,
+        showSpecs: false,
+        speech: "En nuestro **tercer objetivo específico**, abordamos las barreras que enfrentan los países en desarrollo como el Perú. El modelo PLS-SEM de **Irfan et al. (2026)** expone que la inoperancia de los sistemas de prevención no se debe a la falta de leyes, sino a tres barreras acopladas: falta de presupuesto para comprar EPP, leyes deficientes y cultura preventiva débil de las empresas.<br><br>Esto genera lo que **Afuye et al. (2024)** llama una **'discrepancia sistemática'**: las políticas de SST se quedan archivadas en la oficina de la constructora, mientras que el obrero en la calle trabaja sin arnés, sin orejeras contra el ruido de la compactadora y bajo insolación extrema por la presión de cumplir los plazos de entrega.",
+        visual: "• Gráfico de interrelación de barreras (Presupuesto -> Falta de supervisión -> Incumplimiento).<br>• Infografía de la 'Discrepancia' entre el Plan en Oficina vs la Práctica en la Calle.",
+        citations: "• **Irfan et al. (2026)**: Modelado de barreras en economías en desarrollo.<br>• **Afuye et al. (2024)**: Factores que influyen en las conductas de los obreros (discrepancia).<br>• **Hussain et al. (2026)**: Inoperancia de normas sin fiscalización física periódica.",
+        trap: "<strong>¿Cómo se puede romper la barrera de falta de presupuesto en una obra pública del Estado peruano?</strong><br><br><em>Respuesta:</em> 'Estableciendo la partida de Seguridad y Salud en el Trabajo como un costo directo no sujeto a reajustes o reducciones en el presupuesto base de licitación de la obra pública. Así, legalmente, el contratista está obligado a certificar el gasto en EPP y capacitaciones ante la supervisión externa para poder cobrar su valorización mensual.'"
+      },
+      {
+        num: "Paso 10",
+        short: "Conclusiones y Recomendaciones",
+        title: "Conclusiones y Recomendaciones del Informe",
+        time: 120,
+        showSpecs: false,
+        speech: "Para finalizar, estimado jurado, presentamos las principales conclusiones de nuestra revisión:<br><br>1. **Primera Conclusión**: Los peligros ergonómicos (posturas forzadas) y físicos (ruido y golpes) se potencian con la fatiga fisiológica, causando dolor lumbar crónico y errores operativos en la pavimentación.<br>2. **Segunda Conclusión**: El liderazgo transformacional y la salud mental del obrero son determinantes para un cumplimiento preventivo real, mientras que el liderazgo autoritario fomenta el ocultamiento de incidentes.<br>3. **Tercera Conclusión**: Existe una discrepancia sistemática en el Perú provocada por la falta de presupuesto y la escasa fiscalización estatal en el pavimento.<br><br>Por lo tanto, **recomendamos**: implementar pausas activas y rotación continua (enfoque ergonómico de Seo & Lee); capacitar a capataces en liderazgo transformacional; y blindar por contrato el presupuesto exclusivo de SST, asegurando auditorías periódicas bajo la Ley 29783.",
+        visual: "• Tres conclusiones resumidas a la izquierda.<br>• Tres recomendaciones prácticas correspondientes a la derecha.<br>• Mención de la Ley 29783.",
+        citations: "• **Conclusiones**: Alineadas a los OE1, OE2 y OE3.<br>• **Recomendaciones**: Enfocadas en Ergonomía, Liderazgo y Presupuesto Blindado.",
+        trap: "<strong>¿Cuál es la recomendación más importante y de mayor impacto inmediato de las tres planteadas?</strong><br><br><em>Respuesta:</em> 'La recomendación de mayor impacto inmediato es capacitar a los capataces en liderazgo transformacional. Los capataces son la primera línea de supervisión en el pavimento; si ellos cambian el enfoque punitivo por uno preventivo que escuche al obrero fatiga física y mentalmente, las conductas inseguras disminuirán de inmediato sin requerir grandes inversiones tecnológicas.'"
+      }
+    ];
+
+    let currentStepIdx = 0;
+    let timerValue = 90;
+    let timerInterval = null;
+    let isTimerRunning = false;
+
+    // BUILD SIDEBAR NAVIGATION
+    function buildSidebar() {
+      const navList = document.getElementById('steps-nav-list');
+      navList.innerHTML = '';
+      stepsData.forEach((step, idx) => {
+        navList.innerHTML += `
+          <li class="nav-item ${idx === 0 ? 'active' : ''}" id="nav-item-${idx}" onclick="goToStep(${idx})">
+            <button>
+              <span class="nav-item-num">${step.num}</span>
+              <span class="nav-item-title">${step.short}</span>
+            </button>
+          </li>
+        `;
+      });
+    }
+
+    // DISPLAY STEP CONTENT
+    function displayStep(idx) {
+      currentStepIdx = idx;
+      const step = stepsData[idx];
+
+      // Update Active Navigation Item
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      document.getElementById(`nav-item-${idx}`).classList.add('active');
+
+      // Update Header Tags
+      document.getElementById('expo-step-tag').textContent = `${step.num} de ${stepsData.length}`;
+      document.getElementById('expo-step-time').textContent = `Tiempo sugerido: ${formatTime(step.time)}`;
+      document.getElementById('expo-title').textContent = step.title;
+
+      // Toggle Quick Specs Table
+      const specsContainer = document.getElementById('quick-specs-container');
+      if (step.showSpecs) {
+        specsContainer.style.display = 'block';
+      } else {
+        specsContainer.style.display = 'none';
+      }
+
+      // Update Sub-sections Content
+      document.getElementById('speech-content').innerHTML = step.speech;
+      document.getElementById('visual-content').innerHTML = step.visual;
+      document.getElementById('citations-content').innerHTML = step.citations;
+      document.getElementById('trap-content').innerHTML = step.trap;
+
+      // Update Player Indicator & Progress
+      document.getElementById('player-step-indicator').textContent = `${step.num}: ${step.short}`;
+      const progressPercent = ((idx + 1) / stepsData.length) * 100;
+      document.getElementById('player-progress-bar-fill').style.width = `${progressPercent}%`;
+
+      // Update Buttons State
+      document.getElementById('btn-prev').disabled = (idx === 0);
+      document.getElementById('btn-next').textContent = (idx === stepsData.length - 1) ? "Finalizar Ensayo 🎉" : "Siguiente Paso →";
+
+      // Reset & Load Timer for this Step
+      resetTimerForStep(step.time);
+    }
+
+    // TIMER LOGIC
+    function toggleTimer() {
+      const btn = document.getElementById('btn-timer-play');
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        btn.textContent = "▶";
+      } else {
+        isTimerRunning = true;
+        btn.textContent = "⏸";
+        timerInterval = setInterval(() => {
+          timerValue--;
+          document.getElementById('player-timer').textContent = formatTime(timerValue);
+          
+          if (timerValue <= 10) {
+            document.getElementById('player-timer').style.color = 'var(--danger)';
+          }
+
+          if (timerValue <= 0) {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            btn.textContent = "▶";
+            document.getElementById('player-timer').textContent = "00:00";
+            alert("¡Tiempo sugerido cumplido para esta sección! Pasa al siguiente paso para no retrasarte.");
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimerForStep(seconds) {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      timerValue = seconds;
+      document.getElementById('player-timer').textContent = formatTime(timerValue);
+      document.getElementById('player-timer').style.color = 'var(--accent)';
+      document.getElementById('btn-timer-play').textContent = "▶";
+    }
+
+    // UTILS
+    function formatTime(totalSeconds) {
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function toggleSubSection(id) {
+      const sec = document.getElementById(id);
+      sec.classList.toggle('open');
+    }
+
+    function goToStep(idx) {
+      if (idx >= 0 && idx < stepsData.length) {
+        displayStep(idx);
+        // Scroll to top of expo card smoothly
+        document.getElementById('expo-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function nextStep() {
+      if (currentStepIdx < stepsData.length - 1) {
+        goToStep(currentStepIdx + 1);
+      } else {
+        clearInterval(timerInterval);
+        alert("¡Felicitaciones! Has ensayado todo el guion de tu exposición. Estás listo para obtener un 20.");
+      }
+    }
+
+    function prevStep() {
+      if (currentStepIdx > 0) {
+        goToStep(currentStepIdx - 1);
+      }
+    }
+
     // THEME TOGGLE
     function toggleTheme() {
       const body = document.body;
@@ -830,136 +921,11 @@
       }
     }
 
-    // TABS SWITCHING
-    function switchTab(elem, tabId) {
-      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-      
-      elem.classList.add('active');
-      document.getElementById(tabId).classList.add('active');
-
-      if (tabId === 'simulador') {
-        resetSimulator();
-      }
-    }
-
-    // TOGGLE QA COLLAPSIBLE
-    function toggleQA(button) {
-      const item = button.parentElement;
-      item.classList.toggle('open');
-    }
-
-    // SIMULATOR QUESTIONS DATA
-    const simulatorQuestions = [
-      {
-        jury: "Presidente del Jurado (Metodólogo):",
-        question: "¿Por qué optaron por un diseño no experimental en lugar de hacer un experimento de campo en las pistas de Ate?",
-        answer: "Optamos por una revisión sistemática no experimental porque nuestro objetivo es consolidar y analizar el panorama científico global acumulado en los últimos cinco años (2022-2026). Un experimento en Ate nos daría un dato micro y local, pero no permitiría identificar mecanismos de penetración jerárquica de riesgos ni barreras organizacionales complejas ya validadas a nivel internacional en bases de datos Scopus y WoS.",
-        badge: "Declaración PRISMA / Muestreo Intencional"
-      },
-      {
-        jury: "Primer Vocal (Especialista en Infraestructura Vial):",
-        question: "Su estudio menciona los riesgos ergonómicos de pavimentación manual. ¿Qué autores apoyan esto y qué sugieren hacer?",
-        answer: "Nos apoyamos en Seo y Lee (2026) y Riana et al. (2024). Estos autores asocian el extendido manual y la manipulación de cargas pesadas directamente con dolor lumbar agudo y fatiga lumbar. Recomendamos implementar una rotación estricta de puestos cada 2 horas y pausas activas obligatorias dirigidas para mitigar trastornos musculoesqueléticos crónicos en campo.",
-        badge: "Seo y Lee (2026) / Recomendación 1"
-      },
-      {
-        jury: "Segundo Vocal (Especialista en Gestión de SST):",
-        question: "¿Qué es la 'discrepancia operativa' de Afuye et al. (2024) y cómo se evidencia en el Perú?",
-        answer: "La discrepancia operativa es la distancia que hay entre las políticas y leyes escritas en el papel de oficina (como los planes IPERC de nuestra Ley 29783) y lo que el obrero de pavimentación realmente hace en la calle debido a presiones, apuros y supervisión ausente. En el Perú esto se evidencia en el alto índice de obreros laborando sin el adecuado EPP contra el sol intenso y ruido por priorizar el cronograma de avance físico.",
-        badge: "Afuye et al. (2024) / Conclusión 3"
-      },
-      {
-        jury: "Miembro del Jurado (Asesor Técnico):",
-        question: "Explíqueme cómo el tipo de liderazgo del capataz en obra influye en los reportes de accidentes según Sankar y Anandh (2024).",
-        answer: "Sankar y Anandh (2024) señalan que un liderazgo de estilo punitivo o autoritario no evita el peligro, sino que incentiva a que los obreros oculten los incidentes menores o cuasi-accidentes por temor a recibir castigos o ser despedidos. Por el contrario, un liderazgo transformacional promueve la confianza y facilita una cultura de reporte activo donde se detecta la condición subestándar a tiempo.",
-        badge: "Sankar y Anandh (2024) / Tabla 11"
-      },
-      {
-        jury: "Presidente del Jurado (Ingeniería de la Construcción):",
-        question: "En sus recomendaciones proponen blindar el presupuesto. ¿Cómo pretenden obligar a una constructora a no recortar en seguridad?",
-        answer: "Proponemos que el presupuesto de seguridad laboral (SST) sea establecido como una partida cerrada, específica y no transferible desde las bases de licitación del Estado. Así, la constructora no puede desviar ese fondo para priorizar los rendimientos de producción física, bajo sanción del organismo fiscalizador y supervisor del contrato de obra.",
-        badge: "Recomendación 3 / Gestión Pública"
-      },
-      {
-        jury: "Segundo Vocal (Metodólogo):",
-        question: "¿Cómo justifican la confiabilidad de los datos analizados si no aplicaron un coeficiente Alfa de Cronbach propio?",
-        answer: "Al ser una revisión sistemática documental y no un estudio de campo primario, la confiabilidad y validez de los datos no depende de un cuestionario propio, sino del rigor metodológico de la selección documental. Garantizamos esto incluyendo únicamente 17 artículos científicos procedentes de bases indizadas de primer nivel (Scopus y WoS Q1 y Q2) que ya fueron previamente evaluados por pares y validados metodológicamente.",
-        badge: "Rigor Documental / Scopus & WoS"
-      },
-      {
-        jury: "Presidente del Jurado (Salud Ocupacional):",
-        question: "¿Cómo puede medirse objetivamente la fatiga en un obrero sin basarse en opiniones o encuestas?",
-        answer: "Se puede medir fisiológicamente a través de la variabilidad de la frecuencia cardíaca (VFC o HRV), como proponen Arias et al. (2023) y Fang et al. (2023). La VFC refleja el estado del sistema nervioso autónomo; una caída drástica en los intervalos cardíacos es un predictor objetivo de fatiga física y mental acumulada, sirviendo como indicador de alarma de error humano.",
-        badge: "Arias et al. (2023) / Fatiga Fisiológica"
-      }
-    ];
-
-    let timerInterval = null;
-    let selectedSimQuestion = null;
-
-    function resetSimulator() {
-      clearInterval(timerInterval);
-      document.getElementById('sim-question').textContent = "Presiona el botón para iniciar la simulación de preguntas.";
-      document.getElementById('sim-timer').textContent = "Tiempo sugerido de respuesta: -- : --";
-      document.getElementById('sim-answer-reveal').style.display = 'none';
-      document.getElementById('btn-reveal').disabled = true;
-    }
-
-    function generateRandomQuestion() {
-      // Hide answer
-      document.getElementById('sim-answer-reveal').style.display = 'none';
-      
-      // Select question
-      const idx = Math.floor(Math.random() * simulatorQuestions.length);
-      selectedSimQuestion = simulatorQuestions[idx];
-      
-      document.getElementById('sim-jury-role').textContent = selectedSimQuestion.jury;
-      document.getElementById('sim-question').textContent = `"${selectedSimQuestion.question}"`;
-      
-      // Enable reveal button
-      document.getElementById('btn-reveal').disabled = false;
-      
-      // Start 60 seconds countdown for practicing the answer
-      startCountdown(60);
-    }
-
-    function startCountdown(seconds) {
-      clearInterval(timerInterval);
-      let timeLeft = seconds;
-      
-      const timerDisplay = document.getElementById('sim-timer');
-      timerDisplay.style.color = 'var(--text-main)';
-      
-      timerInterval = setInterval(() => {
-        const mins = Math.floor(timeLeft / 60);
-        const secs = timeLeft % 60;
-        
-        timerDisplay.textContent = `Tiempo sugerido de respuesta: ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        
-        if (timeLeft <= 10) {
-          timerDisplay.style.color = 'var(--incorrect)';
-        }
-
-        if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-          timerDisplay.textContent = "¡Tiempo cumplido! Intenta resumir tu respuesta.";
-        }
-        
-        timeLeft--;
-      }, 1000);
-    }
-
-    function revealSimAnswer() {
-      clearInterval(timerInterval);
-      document.getElementById('sim-timer').textContent = "Sustento de defensa desplegado abajo.";
-      document.getElementById('sim-timer').style.color = 'var(--correct)';
-      
-      document.getElementById('sim-answer-text').textContent = selectedSimQuestion.answer;
-      document.getElementById('sim-answer-badge').textContent = selectedSimQuestion.badge;
-      
-      document.getElementById('sim-answer-reveal').style.display = 'block';
-    }
+    // INITIALIZATION
+    window.onload = () => {
+      buildSidebar();
+      displayStep(0);
+    };
   </script>
 </body>
 </html>
